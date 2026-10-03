@@ -483,3 +483,12 @@ color: white;
 .nav-dropdown:focus-within .dropdown-menu {
     display: block;
 }
+
+/*Audio*/
+
+audio {
+    width: 500px;
+    height: 30px;
+    display:block;
+    margin: 0 auto;
+}
