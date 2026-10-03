@@ -438,3 +438,48 @@ text-align: center;
 color: white;
 
 }
+
+/*cart*/
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    max-height: 150px;     /* NEW */
+    overflow-y: auto;      /* NEW */
+    background: rgb(30, 10, 50);
+    border: 1px solid rgb(168, 85, 247);
+    z-index: 100;
+}
+
+.dropdown-menu label {
+    display: block;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-menu label:hover {
+    background: rgb(168, 85, 247);
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: rgb(168, 85, 247);
+    color: white;
+    cursor: pointer;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    display: block;
+}
