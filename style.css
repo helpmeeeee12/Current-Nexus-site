@@ -422,3 +422,19 @@ padding: 0;
     margin-bottom: 6px;
 }
 
+/*animated logo*/
+.logo-gif {
+    padding-top: 100px;
+    display:block;
+    margin: 0 auto;
+    width: 300px;
+
+}
+
+/*home-content*/
+.home-content {
+padding-top: 150px;
+text-align: center;
+color: white;
+
+}
