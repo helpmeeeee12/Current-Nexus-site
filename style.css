@@ -596,22 +596,7 @@ audio {
     margin: 30px auto;
 }
 
-/* TOP BOX - ONE BORDER ONLY */
-.top-box {
-    border: 2px solid #555;
-    padding: 10px;
-    color: white;
-}
-
-.top-box video {
-    display: block;
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    background: black;
-    border: none;
-}
-
+/*Game Trailer*/
 .bottom-boxes {
     display: flex;
     gap: 20px;
@@ -622,5 +607,14 @@ audio {
     flex: 1;
     border: 2px solid #555;
     padding: 20px;
+    color: white;
+    background: #222;
+}
+
+.bottom-box h2 {
+    color: white;
+}
+
+.bottom-box p {
     color: white;
 }
