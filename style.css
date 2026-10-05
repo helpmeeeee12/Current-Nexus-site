@@ -597,6 +597,11 @@ audio {
 }
 
 /*Game Trailer*/
+.top-box {
+    border: 2px solid #555;
+   padding: 10px;
+}
+  
 .bottom-boxes {
     display: flex;
     gap: 20px;
