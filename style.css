@@ -591,40 +591,38 @@ audio {
     margin: 0 auto;
 }
 
-/*Video Trailer*/
-.video-description {
-    display: flex;
-    gap: 30px;
-    width: 85%;
+.game-container {
+    width: 90%;
     margin: 30px auto;
 }
 
-.video-box,
-.description-box {
-    width: 50%;
-    height: 330px;
+/* TOP BOX */
+.top-box {
     border: 2px solid #555;
-    box-sizing: border-box;
     padding: 15px;
+    margin-bottom: 20px;
 }
 
-.video-box {
+.top-box video {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
     background: black;
 }
 
-.video-box video {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* TWO BOXES AT THE BOTTOM */
+.bottom-boxes {
+    display: flex;
+    gap: 20px;
 }
 
-.description-box {
-    font-family: inherit;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
+.bottom-box {
+    border: 2px solid #555;
+    padding: 20px;
+    flex: 1;
 }
 
-.description-box h2 {
+.bottom-box h2 {
     margin-top: 0;
 }
