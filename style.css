@@ -599,30 +599,29 @@ audio {
 /* TOP BOX */
 .top-box {
     border: 2px solid #555;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 10px;
 }
 
+/* VIDEO BORDER */
 .top-box video {
     display: block;
     width: 100%;
     height: 400px;
     object-fit: cover;
     background: black;
+    border: 2px solid #555;
 }
 
-/* TWO BOXES AT THE BOTTOM */
+/* TWO BOTTOM BOXES */
 .bottom-boxes {
     display: flex;
     gap: 20px;
+    margin-top: 20px;
 }
 
+/* BORDER FOR EACH BOTTOM BOX */
 .bottom-box {
+    flex: 1;
     border: 2px solid #555;
     padding: 20px;
-    flex: 1;
-}
-
-.bottom-box h2 {
-    margin-top: 0;
 }
