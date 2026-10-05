@@ -596,12 +596,22 @@ audio {
     margin: 30px auto;
 }
 
-/*Game Trailer*/
+/* Game Trailer */
 .top-box {
     border: 2px solid #555;
-   padding: 10px;
+    padding: 10px;
 }
-  
+
+.top-box video {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    background: black;
+    border: none;
+}
+
+/* Bottom Boxes */
 .bottom-boxes {
     display: flex;
     gap: 20px;
