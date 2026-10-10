@@ -599,8 +599,43 @@ audio {
 /* Game Trailer */
 /* TOP BOX - ONE BORDER ONLY */
 .top-box {
-    border: 2px solid #555;
-    padding: 10px;
+    display: inline-block;
+    border: 2px solid #c800ff;
+    border-radius:10px;
+    overflow: hidden;
+    
+    animation: bordercoloranimate 5s linear infinite;
+}   
+.top-centering{
+padding-left: 8%;
+
+}
+.top-box iframe{
+    display: block;
+    border: none;
+
+}
+
+@keyframes bordercoloranimate {
+     0%, 100% {
+        border-color: #a855f7;
+        box-shadow: 0 0 10px #a855f7;
+    }
+
+    25% {
+        border-color: #ec4899;
+        box-shadow: 0 0 15px #ec4899;
+    }
+
+    50% {
+        border-color: #06b6d4;
+        box-shadow: 0 0 15px #06b6d4;
+    }
+
+    75% {
+        border-color: #3b82f6;
+        box-shadow: 0 0 15px #3b82f6;
+    }
 }
 
 .top-box video {
