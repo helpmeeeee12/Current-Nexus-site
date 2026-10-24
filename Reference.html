@@ -1,152 +1,229 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Company</title>
-
-    <!-- Connect to style.css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
 </head>
 
 <body>
 
     <!-- TOP HEADER -->
-    <div class="top-header">
+    <header class="top-header">
 
-        <!-- LOGO + NAME -->
+        <button
+            class="menu"
+            onclick="openMenu()"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="sideMenu"
+        >☰</button>
+
         <div class="logo">
-            <img src="logo.jpg" alt="Our Logo">
+            <img src="logo.jpg" alt="NEXUS HUB Logo">
             <span class="logo-name">NEXUS HUB</span>
         </div>
 
-    </div>
+    </header>
 
+    <!-- SIDE MENU -->
+    <nav id="sideMenu" class="side-menu" aria-label="Main menu">
+
+        <button
+            class="close-btn"
+            onclick="closeMenu()"
+            aria-label="Close menu"
+        >&times;</button>
+
+        <h2>NEXUS HUB</h2>
+
+        <a href="company.html">Company</a>
+        <a href="developers.html">Developers</a>
+        <a href="Reference.html">References</a>
+
+    </nav>
 
     <!-- NAVIGATION -->
-    <div class="navbar">
+    <nav class="navbar">
 
         <div class="nav-links">
 
-            <a href="index.html">
-                Home 
-            </a>
+            <a href="index.html">Home</a>
 
-            <a href="browse.html">
-                Browse <span class="arrow">▼</span>
-            </a>
-			
+            <a href="browse.html">Browse <span class="arrow">▼</span></a>
+
             <div class="nav-dropdown">
-    <a href="cart.html">Cart <span class="arrow">▼</span></a>
 
-    <div class="dropdown-menu">
-        <label><input type="checkbox"> Counter-Strike 2</label>
-        <label><input type="checkbox"> Valorant</label>
-        <label><input type="checkbox"> League Of Legends</label>
-        <label><input type="checkbox"> Dota 2</label>
-        <label><input type="checkbox"> Minecraft: Java Edition</label>
-        <label><input type="checkbox"> Grand Theft Auto V</label>
-        <label><input type="checkbox"> Red Dead Redemption 2</label>
-        <label><input type="checkbox"> Black Myth: Wukong</label>
-        <label><input type="checkbox"> The Witcher 3: Wild Hunt</label>
-        <label><input type="checkbox"> God of War Ragnarök</label>
-        <label><input type="checkbox"> TEKKEN 8</label>
-        <label><input type="checkbox"> Outlast</label>
-        <label><input type="checkbox"> Terraria</label>
-        <label><input type="checkbox"> Left 4 Dead 2</label>
-        <label><input type="checkbox"> Resident Evil 4</label>
-        <label><input type="checkbox"> Mobile Legends: Bang Bang</label>
-        <label><input type="checkbox"> Genshin Impact</label>
-        <label><input type="checkbox"> Honkai: Star Rail</label>
-        <label><input type="checkbox"> PUBG Mobile</label>
-        <label><input type="checkbox"> Call of Duty: Mobile</label>
-        <label><input type="checkbox"> Free Fire</label>
-        <label><input type="checkbox"> Clash of Clans</label>
-        <label><input type="checkbox"> Clash Royale</label>
-        <label><input type="checkbox"> Roblox</label>
-        <label><input type="checkbox"> Blood Strike</label>
-        <label><input type="checkbox"> Pokémon GO</label>
-        <label><input type="checkbox"> Subway Surfers</label>
-        <label><input type="checkbox"> Among Us</label>
-        <label><input type="checkbox"> Asphalt Legends Unite</label>
-        <label><input type="checkbox"> Brawl Stars</label>
-        <button class="checkout-btn">Checkout</button>
-    </div>
-    </div>
-			
-			<a href="company.html">
-                Company 
-            </a>
+                <a href="cart.html">Cart <span class="arrow">▼</span></a>
 
-			<a href="developers.html">
-                Developers 
-            </a>
-			 <a href="Reference.html">
-                References
-            </a>
+                <div class="dropdown-menu">
+
+                    <label><input type="checkbox" name="cart" value="Counter-Strike 2"> Counter-Strike 2</label>
+                    <label><input type="checkbox" name="cart" value="Valorant"> Valorant</label>
+                    <label><input type="checkbox" name="cart" value="League Of Legends"> League Of Legends</label>
+                    <label><input type="checkbox" name="cart" value="Dota 2"> Dota 2</label>
+                    <label><input type="checkbox" name="cart" value="Minecraft: Java Edition"> Minecraft: Java Edition</label>
+                    <label><input type="checkbox" name="cart" value="Grand Theft Auto V"> Grand Theft Auto V</label>
+                    <label><input type="checkbox" name="cart" value="Red Dead Redemption 2"> Red Dead Redemption 2</label>
+                    <label><input type="checkbox" name="cart" value="Black Myth: Wukong"> Black Myth: Wukong</label>
+                    <label><input type="checkbox" name="cart" value="The Witcher 3: Wild Hunt"> The Witcher 3: Wild Hunt</label>
+                    <label><input type="checkbox" name="cart" value="God of War Ragnarök"> God of War Ragnarök</label>
+                    <label><input type="checkbox" name="cart" value="TEKKEN 8"> TEKKEN 8</label>
+                    <label><input type="checkbox" name="cart" value="Outlast"> Outlast</label>
+                    <label><input type="checkbox" name="cart" value="Terraria"> Terraria</label>
+                    <label><input type="checkbox" name="cart" value="Left 4 Dead 2"> Left 4 Dead 2</label>
+                    <label><input type="checkbox" name="cart" value="Resident Evil 4"> Resident Evil 4</label>
+                    <label><input type="checkbox" name="cart" value="Mobile Legends: Bang Bang"> Mobile Legends: Bang Bang</label>
+                    <label><input type="checkbox" name="cart" value="Genshin Impact"> Genshin Impact</label>
+                    <label><input type="checkbox" name="cart" value="Honkai: Star Rail"> Honkai: Star Rail</label>
+                    <label><input type="checkbox" name="cart" value="PUBG Mobile"> PUBG Mobile</label>
+                    <label><input type="checkbox" name="cart" value="Call of Duty: Mobile"> Call of Duty: Mobile</label>
+                    <label><input type="checkbox" name="cart" value="Free Fire"> Free Fire</label>
+                    <label><input type="checkbox" name="cart" value="Clash of Clans"> Clash of Clans</label>
+                    <label><input type="checkbox" name="cart" value="Clash Royale"> Clash Royale</label>
+                    <label><input type="checkbox" name="cart" value="Roblox"> Roblox</label>
+                    <label><input type="checkbox" name="cart" value="Blood Strike"> Blood Strike</label>
+                    <label><input type="checkbox" name="cart" value="Pokémon GO"> Pokémon GO</label>
+                    <label><input type="checkbox" name="cart" value="Subway Surfers"> Subway Surfers</label>
+                    <label><input type="checkbox" name="cart" value="Among Us"> Among Us</label>
+                    <label><input type="checkbox" name="cart" value="Asphalt Legends Unite"> Asphalt Legends Unite</label>
+                    <label><input type="checkbox" name="cart" value="Brawl Stars"> Brawl Stars</label>
+
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+                </div>
+
+            </div>
 
         </div>
-
 
         <!-- SEARCH BAR -->
-        <div class="search">
-
+        <form class="search" onsubmit="searchGames(event)">
             <input
-                type="text"
+                id="searchInput"
+                type="search"
                 placeholder="Search Games"
+                aria-label="Search games"
             >
+            <button type="submit" aria-label="Search">🔍</button>
+        </form>
 
-            <button>🔍</button>
+    </nav>
 
-        </div>
-
-    </div>
-
-    <!--Reference Tab-->
-
-    <div class="reference-container">
+    <!-- REFERENCES -->
+    <main class="reference-container">
 
         <h1>NEXUS</h1>
         <h2>REFERENCES</h2>
-<p>(click the references to go to the website)</p>
-<ul>
 
-<li><a href="https://liquipedia.net/counterstrike/Counter-Strike_2">Counter-Strike 2 - Liquipedia Counter-Strike Wiki </a></li>
-<li><a href="https://valorant.fandom.com/wiki/VALORANT_Wiki">Valorant Wiki | Fandom </a> </li>
-<li><a href="https://wiki.leagueoflegends.com/en-us/"> of Legends Wiki </a> </li>
-<li><a href="https://liquipedia.net/dota2/Main_Page">Dota 2 Wiki | Liquipedia </a></li>
-<li><a href="https://minecraft.fandom.com/wiki/Java_Edition">Java Edition – Minecraft Wiki </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_V">Grand Theft Auto V - Wikipedia </a></li>
-<li><a href="https://reddead.fandom.com/wiki/Red_Dead_Redemption_2">Red Dead Redemption 2 | Red Dead Wiki | Fandom </a></li>
-<li><a href="https://blackmythwukong.fandom.com/wiki/Black_Myth:_Wukong_Wiki">Black Myth: Wukong Wiki | Fandom </a></li>
-<li><a href="https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt">The Witcher 3: Wild Hunt - Wikipedia </a> </li>
-<li><a href="https://en.wikipedia.org/wiki/God_of_War_Ragnar%C3%B6k">God of War Ragnarök - Wikipedia </a></li>
-<li><a href="https://tekken.fandom.com/wiki/Tekken_8">Tekken 8 | Tekken Wiki | Fandom </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Outlast">Outlast - Wikipedia </a></li>
-<li><a href="https://terraria.wiki.gg/">Official Terraria Wiki </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Left_4_Dead_2">Left 4 Dead 2 - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Resident_Evil_4">Resident Evil 4 - Wikipedia </a></li>
+        <p>(Click the references to go to the website)</p>
 
+        <ul>
+            <li><a href="https://liquipedia.net/counterstrike/Counter-Strike_2" target="_blank" rel="noopener noreferrer">Counter-Strike 2 - Liquipedia Counter-Strike Wiki</a></li>
+            <li><a href="https://valorant.fandom.com/wiki/VALORANT_Wiki" target="_blank" rel="noopener noreferrer">Valorant Wiki | Fandom</a></li>
+            <li><a href="https://wiki.leagueoflegends.com/en-us/" target="_blank" rel="noopener noreferrer">League of Legends Wiki</a></li>
+            <li><a href="https://liquipedia.net/dota2/Main_Page" target="_blank" rel="noopener noreferrer">Dota 2 Wiki | Liquipedia</a></li>
+            <li><a href="https://minecraft.fandom.com/wiki/Java_Edition" target="_blank" rel="noopener noreferrer">Java Edition – Minecraft Wiki</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Grand_Theft_Auto_V" target="_blank" rel="noopener noreferrer">Grand Theft Auto V - Wikipedia</a></li>
+            <li><a href="https://reddead.fandom.com/wiki/Red_Dead_Redemption_2" target="_blank" rel="noopener noreferrer">Red Dead Redemption 2 | Red Dead Wiki | Fandom</a></li>
+            <li><a href="https://blackmythwukong.fandom.com/wiki/Black_Myth:_Wukong_Wiki" target="_blank" rel="noopener noreferrer">Black Myth: Wukong Wiki | Fandom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt" target="_blank" rel="noopener noreferrer">The Witcher 3: Wild Hunt - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/God_of_War_Ragnar%C3%B6k" target="_blank" rel="noopener noreferrer">God of War Ragnarök - Wikipedia</a></li>
+            <li><a href="https://tekken.fandom.com/wiki/Tekken_8" target="_blank" rel="noopener noreferrer">Tekken 8 | Tekken Wiki | Fandom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Outlast" target="_blank" rel="noopener noreferrer">Outlast - Wikipedia</a></li>
+            <li><a href="https://terraria.wiki.gg/" target="_blank" rel="noopener noreferrer">Official Terraria Wiki</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Left_4_Dead_2" target="_blank" rel="noopener noreferrer">Left 4 Dead 2 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Resident_Evil_4" target="_blank" rel="noopener noreferrer">Resident Evil 4 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Mobile_Legends:_Bang_Bang" target="_blank" rel="noopener noreferrer">Mobile Legends: Bang Bang - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Genshin_Impact" target="_blank" rel="noopener noreferrer">Genshin Impact - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Honkai%3A_Star_Rail" target="_blank" rel="noopener noreferrer">Honkai: Star Rail - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/PUBG_Mobile" target="_blank" rel="noopener noreferrer">PUBG Mobile - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Call_of_Duty:_Mobile" target="_blank" rel="noopener noreferrer">Call of Duty: Mobile - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Free_Fire_(video_game)" target="_blank" rel="noopener noreferrer">Free Fire (video game) - Wikipedia</a></li>
+            <li><a href="https://simple.wikipedia.org/wiki/Clash_of_Clans" target="_blank" rel="noopener noreferrer">Clash of Clans - Simple English Wikipedia</a></li>
+            <li><a href="https://clashroyale.fandom.com/wiki/Cards" target="_blank" rel="noopener noreferrer">Cards | Clash Royale Wiki | Fandom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Roblox" target="_blank" rel="noopener noreferrer">Roblox - Wikipedia</a></li>
+            <li><a href="https://blood-strike-fps.fandom.com/wiki/Blood_Strike_Wiki" target="_blank" rel="noopener noreferrer">Blood Strike Wiki | Fandom</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go" target="_blank" rel="noopener noreferrer">Pokémon Go - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Subway_Surfers" target="_blank" rel="noopener noreferrer">Subway Surfers - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Among_Us" target="_blank" rel="noopener noreferrer">Among Us - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Asphalt_Legends" target="_blank" rel="noopener noreferrer">Asphalt Legends - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Brawl_Stars" target="_blank" rel="noopener noreferrer">Brawl Stars - Wikipedia</a></li>
+        </ul>
 
-<li><a href="https://en.wikipedia.org/wiki/Mobile_Legends:_Bang_Bang">Mobile Legends: Bang Bang  - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Genshin_Impact">Genshin Impact - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Honkai%3A_Star_Rail">Honkai: Star Rail - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/PUBG_Mobile">PUBG Mobile - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Call_of_Duty:_Mobile">Call of Duty: Mobile - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Free_Fire_(video_game)">Free Fire (video game) - Wikipedia </a></li>
-<li><a href="https://simple.wikipedia.org/wiki/Clash_of_Clans">Clash of Clans - Simple English Wikipedia, the free encyclopedia </a></li>
-<li><a href="https://clashroyale.fandom.com/wiki/Cards">Cards | Clash Royale Wiki | Fandom </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Roblox">Roblox - Wikipedia </a></li>
-<li><a href="https://blood-strike-fps.fandom.com/wiki/Blood_Strike_Wiki">Blood Strike Wiki | Fandom </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go">Pokémon Go - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Subway_Surfers">Subway Surfers - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Among_Us">Among Us - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Asphalt_Legends">Asphalt Legends - Wikipedia </a></li>
-<li><a href="https://en.wikipedia.org/wiki/Brawl_Stars">Brawl Stars - Wikipedia </a></li>
-</ul> 
+        <p>“I affirm that I have not given or received any unauthorized help on this assignment and that this work is my own.”</p>
 
-    <p>“I affirm that I have not given or received any unauthorized help on this assignment and that this work is my own.”</p>
-    <audio controls autoplay loop onloadstart="this.volume = 0.05" >
-    <source src="ambient.mp3" type="audio/mpeg">
-    
-    </div>
+        <audio controls loop preload="none">
+            <source src="ambient.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
+
+    </main>
+
+    <script>
+        const sideMenu = document.getElementById("sideMenu");
+        const menuButton = document.querySelector(".menu");
+
+        function openMenu() {
+            sideMenu.classList.add("active");
+            menuButton.setAttribute("aria-expanded", "true");
+        }
+
+        function closeMenu() {
+            sideMenu.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.addEventListener("click", function (event) {
+            if (
+                sideMenu.classList.contains("active") &&
+                !sideMenu.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+
+        function checkout() {
+            const selectedGames = document.querySelectorAll(
+                '.dropdown-menu input[name="cart"]:checked'
+            );
+
+            if (selectedGames.length === 0) {
+                alert("Please select at least one game before checkout.");
+                return;
+            }
+
+            const games = Array.from(selectedGames).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            sessionStorage.setItem("nexusCart", JSON.stringify(games));
+            window.location.href = "cart.html";
+        }
+
+        function searchGames(event) {
+            event.preventDefault();
+
+            const query = document.getElementById("searchInput").value.trim();
+
+            if (query) {
+                window.location.href = "browse.html?search=" + encodeURIComponent(query);
+            } else {
+                window.location.href = "browse.html";
+            }
+        }
+    </script>
+
+</body>
+</html>
