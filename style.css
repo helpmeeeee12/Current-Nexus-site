@@ -3,7 +3,6 @@
     box-sizing: border-box;
 }
 
-
 /* BODY */
 
 body {
@@ -11,54 +10,56 @@ body {
     font-family: Arial, sans-serif;
 
     background-image:
-    linear-gradient(to bottom, rgba(208, 0, 255, 0.2), transparent 10%),
-    linear-gradient(to TOP, rgba(208, 0, 255, 0.3), transparent 20%), url("Gaming.jpg");
+        linear-gradient(to bottom, rgba(208, 0, 255, 0.2), transparent 10%),
+        linear-gradient(to top, rgba(208, 0, 255, 0.3), transparent 20%),
+        url("Gaming.jpg");
+
+    background-color: #16001f;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
     min-height: 100vh;
-
     overflow-x: hidden;
 }
-
 
 /* TOP HEADER */
 
 .top-header {
-    height: 50px;
+    min-height: 60px;
+    height: auto;
     background: rgba(50, 0, 70, 0.75);
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     position: relative;
+    padding: 5px 60px;
 }
-
 
 /* LOGO + NAME */
 
 .logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
 
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 8px;
+    max-width: 100%;
 }
-
 
 /* LOGO IMAGE */
 
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
     display: block;
 }
-
 
 /* NAME BESIDE LOGO */
 
@@ -69,29 +70,31 @@ body {
     white-space: nowrap;
 }
 
-
 /* NAVIGATION BAR */
 
 .navbar {
-    min-height: 20px;
+    min-height: 40px;
     background: rgba(50, 0, 70, 0.45);
 
     display: flex;
     align-items: center;
-    padding: 5px 10px;
-    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 10px 15px;
+    gap: 12px;
 
     backdrop-filter: blur(3px);
 }
-
 
 /* NAVIGATION LINKS */
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 10px;
-    white-space: nowrap;
+    gap: 18px;
+    flex-wrap: wrap;
+    white-space: normal;
 }
 
 .nav-links a {
@@ -101,9 +104,8 @@ body {
 }
 
 .nav-links a:hover {
-    color: white;
+    color: #d98cff;
 }
-
 
 /* ARROW */
 
@@ -112,33 +114,34 @@ body {
     margin-left: 4px;
 }
 
-
 /* SEARCH */
 
 .search {
     margin-left: auto;
     display: flex;
-    flex: 1;
+    flex: 0 1 300px;
+    width: 100%;
     max-width: 300px;
-    height: 25px;
+    min-width: 0;
+    height: 30px;
 }
-
 
 /* SEARCH INPUT */
 
 .search input {
+    flex: 1;
+    min-width: 0;
     width: 100%;
-    height: 25px;
+    height: 30px;
 
     background: rgba(23, 29, 37, 1);
     border: 2px solid #526171;
     color: white;
-    font-size: 18px;
+    font-size: 14px;
     font-style: italic;
-    padding: 0 15px;
+    padding: 0 12px;
     outline: none;
 }
-
 
 /* SEARCH PLACEHOLDER */
 
@@ -146,28 +149,24 @@ body {
     color: #ddd;
 }
 
-
 /* SEARCH BUTTON */
 
 .search button {
-    width: 50px;
-    height: 29px;
+    flex: 0 0 42px;
+    height: 30px;
 
     border: none;
     background: rgba(23, 29, 37, 0.70);
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
 }
-
 
 /* IPAD / SMALLER SCREEN */
 
 @media (max-width: 1100px) {
     .navbar {
-        flex-direction: column;
         align-items: stretch;
-        gap: 15px;
     }
 
     .nav-links {
@@ -179,20 +178,26 @@ body {
     .search {
         width: 100%;
         max-width: none;
+        flex-basis: 100%;
+        margin-left: 0;
     }
 }
-
 
 /* VERY SMALL SCREEN */
 
 @media (max-width: 700px) {
+    .top-header {
+        min-height: 55px;
+        padding: 5px 45px;
+    }
+
     .logo img {
-        width: 50px;
-        height: 50px;
+        width: 38px;
+        height: 38px;
     }
 
     .logo-name {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .logo {
@@ -209,20 +214,21 @@ body {
     }
 }
 
-
 /* GAMES */
 
 .game-grid {
-    width: 90%;
-    max-width: 1100px;
-    margin: 40px auto;
+    width: 92%;
+    max-width: 1200px;
+    margin: 35px auto;
 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
 }
 
 .game-card {
+    min-width: 0;
+    overflow: hidden;
     background: rgba(0, 0, 0, 0.5);
     text-decoration: none;
     color: white;
@@ -238,10 +244,11 @@ body {
 
 .game-info {
     padding: 10px 15px;
+    overflow-wrap: anywhere;
 }
 
 .game-info h3 {
-    margin: 0 0 8px 0;
+    margin: 0 0 8px;
     font-size: 18px;
 }
 
@@ -255,30 +262,30 @@ body {
     transform: scale(1.03);
 }
 
-
 /* COMPANY PAGE */
 
 .company-container {
-    width: 85%;
+    width: 90%;
     max-width: 1000px;
-    margin: 50px auto;
-    padding: 35px;
+    margin: 35px auto;
+    padding: 25px;
 
     background: rgba(0, 0, 0, 0.75);
     color: white;
     border-radius: 10px;
+    overflow-wrap: anywhere;
 }
 
 .company-container h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(28px, 4vw, 40px);
     margin-top: 0;
     color: #d98cff;
 }
 
 .company-container h2 {
     text-align: center;
-    font-size: 28px;
+    font-size: clamp(22px, 3vw, 28px);
     margin-bottom: 30px;
     color: #ffffff;
 }
@@ -289,24 +296,33 @@ body {
     margin-bottom: 20px;
 }
 
-
 /* DEVELOPERS */
 
 .developers {
     display: flex;
     justify-content: center;
-    gap: 60px;
-    margin-top: 60px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 35px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
     text-align: center;
 }
 
 .developer {
+    flex: 0 1 220px;
+    min-width: 0;
     color: white;
 }
 
 .developer img {
+    display: block;
     width: 180px;
     height: 180px;
+    max-width: 100%;
+    margin: 0 auto;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #ffc4e1;
@@ -323,31 +339,31 @@ body {
     color: #ffc4e1;
 }
 
-
 /* REFERENCES */
 
 .reference-container {
-    width: 85%;
+    width: 90%;
     max-width: 1000px;
-    margin: 50px auto;
-    padding: 35px;
+    margin: 35px auto;
+    padding: 25px;
 
     background: rgba(0, 0, 0, 0.75);
     color: white;
     border-radius: 10px;
     list-style: none;
+    overflow-wrap: anywhere;
 }
 
 .reference-container h1 {
     text-align: center;
-    font-size: 40px;
+    font-size: clamp(28px, 4vw, 40px);
     margin-top: 0;
     color: #d98cff;
 }
 
 .reference-container h2 {
     text-align: center;
-    font-size: 28px;
+    font-size: clamp(22px, 3vw, 28px);
     margin-bottom: 30px;
     color: #ffffff;
 }
@@ -378,7 +394,6 @@ body {
     margin-bottom: 6px;
 }
 
-
 /* ANIMATED LOGO */
 
 .logo-gif {
@@ -386,8 +401,8 @@ body {
     display: block;
     margin: 0 auto;
     width: 300px;
+    max-width: 100%;
 }
-
 
 /* HOME CONTENT */
 
@@ -397,12 +412,12 @@ body {
     color: white;
 }
 
-
 /* CART / DROPDOWN */
 
 .nav-dropdown {
     position: relative;
     display: inline-block;
+    z-index: 1002;
 }
 
 .dropdown-menu {
@@ -410,12 +425,13 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 200px;
-    max-height: 150px;
+    min-width: 220px;
+    max-width: min(300px, 90vw);
+    max-height: 250px;
     overflow-y: auto;
     background: rgb(30, 10, 50);
     border: 1px solid rgb(168, 85, 247);
-    z-index: 100;
+    z-index: 1003;
 }
 
 .dropdown-menu label {
@@ -443,17 +459,15 @@ body {
     display: block;
 }
 
-
 /* MAIN CONTENT */
 
 .main-content {
     display: grid;
-    grid-template-columns: 70% 30%;
-    gap: 0;
+    grid-template-columns: minmax(0, 7fr) minmax(250px, 3fr);
+    gap: 15px;
     padding: 15px;
-    min-height: 650px;
+    min-height: 0;
 }
-
 
 /* NEWS SECTION */
 
@@ -469,31 +483,29 @@ body {
     color: white;
 }
 
-
 /* TWO TRAILER BOXES */
 
 .news-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .news-card {
     min-width: 0;
 }
 
-
 /* TRAILER VIDEO */
 
 .news-card video {
     display: block;
     width: 100%;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     background: black;
     border: 1px solid #555;
 }
-
 
 /* TRAILER DESCRIPTION */
 
@@ -510,7 +522,6 @@ body {
     margin-top: 10px;
 }
 
-
 /* COMPANY SECTION */
 
 .company-section {
@@ -521,7 +532,7 @@ body {
 
 .company-section h2 {
     font-size: 32px;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px;
     color: white;
 }
 
@@ -535,23 +546,29 @@ body {
     line-height: 1.7;
 }
 
-
 /* RESPONSIVE */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+    .game-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
     .main-content {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 768px) {
     .news-container {
         grid-template-columns: 1fr;
     }
 
     .news-card video {
-        height: 230px;
+        height: auto;
+        aspect-ratio: 16 / 9;
     }
 }
-
 
 /* AUDIO */
 
@@ -563,29 +580,31 @@ audio {
     margin: 0 auto;
 }
 
+/* GAME TRAILER */
+
 .game-container {
-    width: 90%;
+    width: min(92%, 1200px);
     margin: 30px auto;
 }
 
-
-/* GAME TRAILER */
-
 .top-box {
     display: inline-block;
+    max-width: 100%;
     border: 2px solid #c800ff;
     border-radius: 10px;
     overflow: hidden;
-
     animation: bordercoloranimate 5s linear infinite;
 }
 
 .top-centering {
-    padding-left: 8%;
+    padding-left: 0;
+    text-align: center;
 }
 
 .top-box iframe {
     display: block;
+    width: 100%;
+    max-width: 100%;
     border: none;
 }
 
@@ -614,91 +633,83 @@ audio {
 .top-box video {
     display: block;
     width: 100%;
-    height: 350px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     background: black;
     border: none;
 }
 
-
 /* BOTTOM BOXES */
 
 .bottom-boxes {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
 }
 
 .bottom-box {
-    flex: 1;
+    flex: 1 1 250px;
+    min-width: 0;
     border: 2px solid #555;
     padding: 20px;
     color: white;
     background: #222;
 }
 
-.bottom-box h2 {
-    color: white;
-}
-
+.bottom-box h2,
 .bottom-box p {
     color: white;
 }
 
-
-/* ==================================
-   HAMBURGER MENU - NEXUS HUB
-   ================================== */
-
-
-/* HAMBURGER BUTTON */
+/* HAMBURGER MENU - NEXUS HUB */
 
 .menu {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     background: transparent;
     border: none;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
     cursor: pointer;
-
-    margin-left: 15px;
-    padding: 5px 10px;
-
-    z-index: 1001;
+    margin: 0;
+    padding: 5px;
+    line-height: 1;
+    z-index: 2001;
 }
 
 .menu:hover {
     color: #d98cff;
 }
 
-
 /* SIDE MENU */
 
 .side-menu {
     height: 100vh;
+    height: 100dvh;
     width: 250px;
-
+    max-width: 85vw;
     position: fixed;
     top: 0;
-    left: -260px;
-
-    background: rgba(30, 0, 45, 0.97);
+    left: 0;
+    transform: translateX(-100%);
+    background: rgba(30, 0, 45, 0.98);
     border-right: 2px solid #a855f7;
-
     padding-top: 65px;
-
-    z-index: 1000;
-
+    z-index: 2000;
     overflow-y: auto;
-    transition: left 0.3s ease;
+    transition: transform 0.3s ease;
 }
-
 
 /* SHOW SIDE MENU */
 
 .side-menu.active {
     left: 0;
+    transform: translateX(0);
 }
-
 
 /* SIDE MENU TITLE */
 
@@ -708,21 +719,16 @@ audio {
     margin-bottom: 30px;
 }
 
-
 /* SIDE MENU LINKS */
 
 .side-menu a {
     display: block;
-
     padding: 15px 25px;
-
     color: white;
     text-decoration: none;
     font-size: 17px;
-
     transition: 0.2s;
 }
-
 
 /* LINK HOVER EFFECT */
 
@@ -732,17 +738,14 @@ audio {
     padding-left: 35px;
 }
 
-
 /* CLOSE BUTTON */
 
 .close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
-
     font-size: 32px;
     color: white;
-
     background: transparent;
     border: none;
     cursor: pointer;
@@ -752,16 +755,131 @@ audio {
     color: #d98cff;
 }
 
+/* TABLET RESPONSIVE */
 
-/* SMALL SCREEN ADJUSTMENT */
+@media (max-width: 1000px) {
+    .navbar {
+        align-items: stretch;
+    }
 
-@media (max-width: 700px) {
-    .side-menu {
-        width: 250px;
+    .search {
+        flex-basis: 100%;
+        max-width: none;
+        margin-left: 0;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .top-header {
+        min-height: 55px;
+        padding: 5px 45px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo-name {
+        font-size: 16px;
     }
 
     .menu {
-        margin-left: 5px;
-        font-size: 27px;
+        left: 8px;
+        font-size: 25px;
+    }
+
+    .navbar {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .game-grid {
+        width: 92%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 20px auto;
+    }
+
+    .game-card img {
+        height: 150px;
+    }
+
+    .game-info h3 {
+        font-size: 15px;
+    }
+
+    .game-info p {
+        font-size: 14px;
+    }
+
+    .developers {
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .developer {
+        flex-basis: 140px;
+    }
+
+    .developer img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .company-container,
+    .reference-container {
+        width: 92%;
+        padding: 18px;
+        margin: 25px auto;
+    }
+
+    .main-content {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .news-section,
+    .company-section {
+        padding: 18px;
+    }
+
+    .news-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .news-section h2,
+    .company-section h2 {
+        font-size: 26px;
+    }
+
+    audio {
+        width: 100%;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .side-menu,
+    .game-card,
+    .side-menu a {
+        transition: none;
+    }
+
+    .top-box {
+        animation: none;
     }
 }
