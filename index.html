@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS HUB - Home</title>
+    <title>Home page</title>
 
+    <!-- Connect to style.css -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.jpg" type="image/jpg">
 </head>
@@ -16,13 +16,6 @@
     <!-- TOP HEADER -->
     <div class="top-header">
 
-        <!-- HAMBURGER BUTTON -->
-        <button class="menu"
-                onclick="openMenu()"
-                aria-label="Open navigation menu">
-            ☰
-        </button>
-
         <!-- LOGO + NAME -->
         <div class="logo">
             <img src="logo.jpg" alt="Our Logo">
@@ -31,31 +24,14 @@
 
     </div>
 
-
-    <!-- SLIDING SIDE MENU -->
-    <nav id="sideMenu" class="side-menu">
-
-        <button class="close-btn"
-                onclick="closeMenu()"
-                aria-label="Close navigation menu">
-            &times;
-        </button>
-
-        <h2>NEXUS HUB</h2>
-
-        <a href="company.html">Company</a>
-        <a href="developers.html">Developers</a>
-        <a href="Reference.html">References</a>
-
-    </nav>
-
-
     <!-- NAVIGATION -->
     <div class="navbar">
 
         <div class="nav-links">
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
 
             <a href="browse.html">
                 Browse <span class="arrow">▼</span>
@@ -95,10 +71,11 @@
                     <label><input type="checkbox"> Clash Royale</label>
                     <label><input type="checkbox"> Roblox</label>
                     <label><input type="checkbox"> Blood Strike</label>
-                    <label><input type="checkbox"> Pokémon GO</label>
-                    <label><input type="checkbox"> Subway Surfers</label>
+                    <label><input type="checkbox"> WarDogs</label>
+                    <label><input type="checkbox"> Repo</label>
                     <label><input type="checkbox"> Among Us</label>
-                    <label><input type="checkbox"> Asphalt Legends Unite</label>
+                    <label><input type="checkbox"> Dead By Daylight</label>
+                    <label><input type="checkbox"> Clive Barker's Hellraiser: Revival</label>
                     <label><input type="checkbox"> Brawl Stars</label>
 
                     <button class="checkout-btn">Checkout</button>
@@ -106,23 +83,33 @@
                 </div>
             </div>
 
-            <a href="company.html">Company</a>
-            <a href="developers.html">Developers</a>
-            <a href="Reference.html">References</a>
+            <a href="company.html">
+                Company
+            </a>
+
+            <a href="developers.html">
+                Developers
+            </a>
+
+            <a href="Reference.html">
+                References
+            </a>
 
         </div>
 
         <!-- SEARCH BAR -->
         <div class="search">
 
-            <input type="text" placeholder="Search the store">
+            <input
+                type="text"
+                placeholder="Search the store"
+            >
 
-            <button type="button" aria-label="Search">🔍</button>
+            <button>🔍</button>
 
         </div>
 
     </div>
-
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
@@ -138,13 +125,13 @@
                 <div class="news-card">
 
                     <video controls autoplay muted>
-                        <source src="gta5.mp4" type="video/mp4">
+                        <source src="gta.mp4" type="video/mp4">
                     </video>
 
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Grand Theft Auto V is a 2013 action-adventure game
+                        Grand Theft Auto V is a 2013 action-adventure game 
                         developed by Rockstar North and published by Rockstar Games.
                     </p>
 
@@ -160,7 +147,7 @@
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Black Myth: Wukong is a 2024 action role-playing game
+                        Black Myth: Wukong is a 2024 action role-playing game 
                         developed and published by the Chinese studio Game Science.
                     </p>
 
@@ -169,7 +156,6 @@
             </div>
 
         </section>
-
 
         <!-- COMPANY SECTION -->
         <aside class="company-section">
@@ -195,26 +181,9 @@
 
     </main>
 
-
-    <!-- AUDIO -->
-    <audio controls autoplay loop
-           onloadstart="this.volume = 0.05" muted>
-        <source src="ambient.mp3" type="audio/mpeg">
-    </audio>
-
-
-    <!-- HAMBURGER MENU JAVASCRIPT -->
-    <script>
-        function openMenu() {
-            document.getElementById("sideMenu")
-                .classList.add("active");
-        }
-
-        function closeMenu() {
-            document.getElementById("sideMenu")
-                .classList.remove("active");
-        }
-    </script>
-
+    <audio controls autoplay loop onloadstart="this.volume = 0.05" muted >
+    <source src="ambient.mp3" type="audio/mpeg">
+    
+</audio>
 </body>
 </html>
