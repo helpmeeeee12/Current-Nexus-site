@@ -1,18 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Browse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse - NEXUS HUB</title>
 
-    <!-- Connect to style.css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg" type="image/jpg">
 </head>
 
 <body>
 
     <!-- TOP HEADER -->
     <div class="top-header">
+
+        <!-- HAMBURGER BUTTON -->
+        <button class="menu"
+                onclick="openMenu()"
+                aria-label="Open menu">
+            ☰
+        </button>
 
         <!-- LOGO + NAME -->
         <div class="logo">
@@ -22,81 +31,92 @@
 
     </div>
 
+    <!-- SLIDING SIDE MENU -->
+    <nav id="sideMenu" class="side-menu">
+
+        <button class="close-btn"
+                onclick="closeMenu()"
+                aria-label="Close menu">
+            &times;
+        </button>
+
+        <h2>NEXUS HUB</h2>
+
+        <a href="company.html">Company</a>
+        <a href="developers.html">Developers</a>
+        <a href="Reference.html">References</a>
+
+    </nav>
 
     <!-- NAVIGATION -->
     <div class="navbar">
 
         <div class="nav-links">
 
-            <a href="index.html">
-                Home 
-            </a>
+            <a href="index.html">Home</a>
 
             <a href="browse.html">
                 Browse <span class="arrow">▼</span>
             </a>
-			
+
+            <!-- CART DROPDOWN -->
             <div class="nav-dropdown">
-    <a href="cart.html">Cart <span class="arrow">▼</span></a>
 
-    <div class="dropdown-menu">
-        <label><input type="checkbox"> Counter-Strike 2</label>
-        <label><input type="checkbox"> Valorant</label>
-        <label><input type="checkbox"> League Of Legends</label>
-        <label><input type="checkbox"> Dota 2</label>
-        <label><input type="checkbox"> Minecraft: Java Edition</label>
-        <label><input type="checkbox"> Grand Theft Auto V</label>
-        <label><input type="checkbox"> Red Dead Redemption 2</label>
-        <label><input type="checkbox"> Black Myth: Wukong</label>
-        <label><input type="checkbox"> The Witcher 3: Wild Hunt</label>
-        <label><input type="checkbox"> God of War Ragnarök</label>
-        <label><input type="checkbox"> TEKKEN 8</label>
-        <label><input type="checkbox"> Outlast</label>
-        <label><input type="checkbox"> Terraria</label>
-        <label><input type="checkbox"> Left 4 Dead 2</label>
-        <label><input type="checkbox"> Resident Evil 4</label>
-        <label><input type="checkbox"> Mobile Legends: Bang Bang</label>
-        <label><input type="checkbox"> Genshin Impact</label>
-        <label><input type="checkbox"> Honkai: Star Rail</label>
-        <label><input type="checkbox"> PUBG Mobile</label>
-        <label><input type="checkbox"> Call of Duty: Mobile</label>
-        <label><input type="checkbox"> Free Fire</label>
-        <label><input type="checkbox"> Clash of Clans</label>
-        <label><input type="checkbox"> Clash Royale</label>
-        <label><input type="checkbox"> Roblox</label>
-        <label><input type="checkbox"> Blood Strike</label>
-        <label><input type="checkbox"> Pokémon GO</label>
-        <label><input type="checkbox"> Subway Surfers</label>
-        <label><input type="checkbox"> Among Us</label>
-        <label><input type="checkbox"> Asphalt Legends Unite</label>
-        <label><input type="checkbox"> Brawl Stars</label>
-        <button class="checkout-btn">Checkout</button>
-    </div>
-    </div>
-			
-			<a href="company.html">
-                Company 
-            </a>
+                <a href="cart.html">
+                    Cart <span class="arrow">▼</span>
+                </a>
 
-			<a href="developers.html">
-                Developers 
-            </a>
-			 <a href="Reference.html">
-                References 
-            </a>
+                <div class="dropdown-menu">
+
+                    <label><input type="checkbox"> Counter-Strike 2</label>
+                    <label><input type="checkbox"> Valorant</label>
+                    <label><input type="checkbox"> League Of Legends</label>
+                    <label><input type="checkbox"> Dota 2</label>
+                    <label><input type="checkbox"> Minecraft: Java Edition</label>
+                    <label><input type="checkbox"> Grand Theft Auto V</label>
+                    <label><input type="checkbox"> Red Dead Redemption 2</label>
+                    <label><input type="checkbox"> Black Myth: Wukong</label>
+                    <label><input type="checkbox"> The Witcher 3: Wild Hunt</label>
+                    <label><input type="checkbox"> God of War Ragnarök</label>
+                    <label><input type="checkbox"> TEKKEN 8</label>
+                    <label><input type="checkbox"> Outlast</label>
+                    <label><input type="checkbox"> Terraria</label>
+                    <label><input type="checkbox"> Left 4 Dead 2</label>
+                    <label><input type="checkbox"> Resident Evil 4</label>
+                    <label><input type="checkbox"> Mobile Legends: Bang Bang</label>
+                    <label><input type="checkbox"> Genshin Impact</label>
+                    <label><input type="checkbox"> Honkai: Star Rail</label>
+                    <label><input type="checkbox"> PUBG Mobile</label>
+                    <label><input type="checkbox"> Call of Duty: Mobile</label>
+                    <label><input type="checkbox"> Free Fire</label>
+                    <label><input type="checkbox"> Clash of Clans</label>
+                    <label><input type="checkbox"> Clash Royale</label>
+                    <label><input type="checkbox"> Roblox</label>
+                    <label><input type="checkbox"> Blood Strike</label>
+					<label><input type="checkbox"> WarDogs</label>
+                    <label><input type="checkbox"> Repo</label>
+                    <label><input type="checkbox"> Among Us</label>
+                    <label><input type="checkbox"> Dead By Daylight</label>
+                    <label><input type="checkbox"> Clive Barker's Hellraiser: Revival</label>
+                    <label><input type="checkbox"> Brawl Stars</label>
+					
+                    <button class="checkout-btn">Checkout</button>
+
+                </div>
+            </div>
+
+            <a href="company.html">Company</a>
+            <a href="developers.html">Developers</a>
+            <a href="Reference.html">References</a>
 
         </div>
-
 
         <!-- SEARCH BAR -->
         <div class="search">
 
-            <input
-                type="text"
-                placeholder="Search the store"
-            >
+            <input type="text" placeholder="Search the store">
 
-            <button>🔍</button>
+            <button type="button" aria-label="Search">🔍</button>
 
         </div>
 
@@ -105,7 +125,6 @@
     <!-- GAME GRID -->
     <div class="game-grid">
 
-        <!-- GAME 1 -->
         <a href="CounterStrike2.html" class="game-card">
             <img src="CounterStrike2.jpg" alt="Counter Strike 2">
             <div class="game-info">
@@ -114,8 +133,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 2 -->
         <a href="lol.html" class="game-card">
             <img src="lol.jpg" alt="League of Legends">
             <div class="game-info">
@@ -124,8 +141,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 3 -->
         <a href="valorant.html" class="game-card">
             <img src="Valorant.jpg" alt="Valorant">
             <div class="game-info">
@@ -134,8 +149,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 4 -->
         <a href="dota2.html" class="game-card">
             <img src="Dota2.jpg" alt="Dota 2">
             <div class="game-info">
@@ -144,8 +157,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 5 -->
         <a href="minecraft.html" class="game-card">
             <img src="Mine.jpg" alt="Minecraft">
             <div class="game-info">
@@ -154,58 +165,46 @@
             </div>
         </a>
 
-
-        <!-- GAME 6 -->
         <a href="gta5.html" class="game-card">
-            <img src="gta.jpg" alt="GTA">
+            <img src="gta.jpg" alt="GTA V">
             <div class="game-info">
-                <h3>GTA</h3>
+                <h3>GTA V</h3>
                 <p>₱1,699</p>
             </div>
         </a>
 
-
-        <!-- GAME 7 -->
         <a href="Red dead redemption2.html" class="game-card">
-            <img src="rdr.jpg" alt="Red Dead Redemption">
+            <img src="rdr.jpg" alt="Red Dead Redemption 2">
             <div class="game-info">
                 <h3>Red Dead Redemption</h3>
                 <p>₱1,500</p>
             </div>
         </a>
 
-
-        <!-- GAME 8 -->
         <a href="wukong.html" class="game-card">
-            <img src="wukong.jpg" alt="Black Myth:Wukong">
+            <img src="wukong.jpg" alt="Black Myth: Wukong">
             <div class="game-info">
                 <h3>Wukong</h3>
                 <p>₱2,899</p>
             </div>
         </a>
 
-
-        <!-- GAME 9 -->
         <a href="witcher.html" class="game-card">
-            <img src="witcher.jpg" alt="The Wiher 3:Wild Hunt">
+            <img src="witcher.jpg" alt="The Witcher 3">
             <div class="game-info">
                 <h3>Witcher</h3>
                 <p>₱1,999</p>
             </div>
         </a>
 
-
-        <!-- GAME 10 -->
         <a href="god of war.html" class="game-card">
-            <img src="godwar.jpg" alt="God of War Ragnarok">
+            <img src="godwar.jpg" alt="God of War Ragnarök">
             <div class="game-info">
                 <h3>God of War</h3>
                 <p>₱2,999</p>
             </div>
         </a>
 
-
-        <!-- GAME 11 -->
         <a href="tekken8.html" class="game-card">
             <img src="tekken.jpg" alt="Tekken 8">
             <div class="game-info">
@@ -214,8 +213,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 12 -->
         <a href="outlast.html" class="game-card">
             <img src="outlast.jpg" alt="Outlast">
             <div class="game-info">
@@ -224,8 +221,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 13 -->
         <a href="terraria.html" class="game-card">
             <img src="teraria.png" alt="Terraria">
             <div class="game-info">
@@ -234,8 +229,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 14 -->
         <a href="left4dead.html" class="game-card">
             <img src="lfd.jpg" alt="Left 4 Dead 2">
             <div class="game-info">
@@ -244,8 +237,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 15 -->
         <a href="residentevil4.html" class="game-card">
             <img src="re4.jpg" alt="Resident Evil 4">
             <div class="game-info">
@@ -254,48 +245,38 @@
             </div>
         </a>
 
-
-        <!-- GAME 16 -->
         <a href="mlbb.html" class="game-card">
-            <img src="mlbb.jpg" alt="Mobile Legends:Bang Bang">
+            <img src="mlbb.jpg" alt="Mobile Legends: Bang Bang">
             <div class="game-info">
-                <h3>Mobile Legends: Bang Bang </h3>
+                <h3>Mobile Legends: Bang Bang</h3>
                 <p>Free</p>
             </div>
         </a>
 
-
-        <!-- GAME 17 -->
         <a href="genshinimpact.html" class="game-card">
-            <img src="genshin.jpg" alt="Geshin Impact">
+            <img src="genshin.jpg" alt="Genshin Impact">
             <div class="game-info">
                 <h3>Genshin Impact</h3>
                 <p>₱499</p>
             </div>
         </a>
 
-
-        <!-- GAME 18 -->
         <a href="honkaistarrails.html" class="game-card">
-            <img src="starrail.jpg" alt="Honkai:Star Rail">
+            <img src="starrail.jpg" alt="Honkai: Star Rail">
             <div class="game-info">
-                <h3>Honkai:Star Rail</h3>
+                <h3>Honkai: Star Rail</h3>
                 <p>₱299</p>
             </div>
         </a>
 
-
-        <!-- GAME 19 -->
         <a href="codm.html" class="game-card">
-            <img src="codm.jpg" alt="Call of Duty:Mobile">
+            <img src="codm.jpg" alt="Call of Duty: Mobile">
             <div class="game-info">
-                <h3>Call of Duty:Mobile</h3>
+                <h3>Call of Duty: Mobile</h3>
                 <p>Free</p>
             </div>
         </a>
 
-
-        <!-- GAME 20 -->
         <a href="pubg.html" class="game-card">
             <img src="pubg.jpg" alt="PUBG Mobile">
             <div class="game-info">
@@ -304,8 +285,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 21 -->
         <a href="freefire.html" class="game-card">
             <img src="ff.jpg" alt="Free Fire">
             <div class="game-info">
@@ -314,28 +293,22 @@
             </div>
         </a>
 
-
-        <!-- GAME 22 -->
         <a href="coc.html" class="game-card">
             <img src="coc.jpg" alt="Clash of Clans">
-            <div class="Clash of Clans">
+            <div class="game-info">
                 <h3>Clash of Clans</h3>
                 <p>₱299</p>
             </div>
         </a>
 
-
-        <!-- GAME 23 -->
         <a href="cr.html" class="game-card">
             <img src="cr.jpg" alt="Clash Royale">
-            <div class="Clash Royale">
+            <div class="game-info">
                 <h3>Clash Royale</h3>
                 <p>₱399</p>
             </div>
         </a>
 
-
-        <!-- GAME 24 -->
         <a href="roblox.html" class="game-card">
             <img src="roblox.jpg" alt="Roblox">
             <div class="game-info">
@@ -344,38 +317,30 @@
             </div>
         </a>
 
-
-        <!-- GAME 25 -->
         <a href="bloodstrike.html" class="game-card">
-            <img src="bs.jpg" alt="BloodStrike">
+            <img src="bs.jpg" alt="Blood Strike">
             <div class="game-info">
-                <h3>BloodStrike</h3>
+                <h3>Blood Strike</h3>
                 <p>₱299</p>
             </div>
         </a>
 
-
-        <!-- GAME 26 -->
         <a href="wardogs.html" class="game-card">
-            <img src="wardogs.jpg" alt="Wardogs">
+            <img src="wardogs.jpg" alt="WarDogs">
             <div class="game-info">
                 <h3>WarDogs</h3>
                 <p>₱1,340</p>
             </div>
         </a>
 
-
-        <!-- GAME 27 -->
         <a href="repo.html" class="game-card">
-            <img src="repo.jpg" alt="Repo">
+            <img src="repo.jpg" alt="REPO">
             <div class="game-info">
                 <h3>Repo</h3>
                 <p>₱314</p>
             </div>
         </a>
 
-
-        <!-- GAME 28 -->
         <a href="amongus.html" class="game-card">
             <img src="amongus.jpg" alt="Among Us">
             <div class="game-info">
@@ -384,8 +349,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 29 -->
         <a href="deadbydaylight.html" class="game-card">
             <img src="deadbydaylight.jpg" alt="Dead by Daylight">
             <div class="game-info">
@@ -394,8 +357,6 @@
             </div>
         </a>
 
-
-        <!-- GAME 30 -->
         <a href="hellraiser.html" class="game-card">
             <img src="hellraiser.jpg" alt="Clive Barker's Hellraiser: Revival">
             <div class="game-info">
@@ -406,8 +367,23 @@
 
     </div>
 
-<audio controls autoplay loop onloadstart="this.volume = 0.05" >
-    <source src="ambient.mp3" type="audio/mpeg">
-    
+    <!-- AUDIO -->
+    <audio controls autoplay loop onloadstart="this.volume = 0.05">
+        <source src="ambient.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- HAMBURGER MENU JAVASCRIPT -->
+    <script>
+        function openMenu() {
+            document.getElementById("sideMenu")
+                .classList.add("active");
+        }
+
+        function closeMenu() {
+            document.getElementById("sideMenu")
+                .classList.remove("active");
+        }
+    </script>
+
 </body>
 </html>
