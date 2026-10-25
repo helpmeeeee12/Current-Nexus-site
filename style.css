@@ -1031,3 +1031,139 @@ iframe.hover-zoom:hover {
     }
 }
 
+
+/* SELECTED GAME DISPLAY */
+#gameDisplay:empty {
+    display: none;
+}
+
+#gameDisplay {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+#gameDisplay .news-card {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+#gameDisplay iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+}
+
+#displayTitle:empty {
+    display: none;
+}
+
+#gameDisplay .news-card h3 {
+    color: #d9a5ff;
+    font-size: 24px;
+    text-align: center;
+}
+
+#gameDisplay .news-card p {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* HIDE EMPTY NEWS SECTION */
+.news-section:has(#gameDisplay:empty) {
+    display: none;
+}
+
+/* CART TOTAL */
+.cart-total {
+    position: sticky;
+    bottom: 43px;
+    padding: 12px;
+    background: rgb(30, 10, 50);
+    color: white;
+    border-top: 1px solid rgb(168, 85, 247);
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* CHECKOUT BUTTON */
+.checkout-btn {
+    position: sticky;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: rgb(168, 85, 247);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.checkout-btn:hover {
+    background: #7e22ce;
+}
+
+/* CART CHECKBOXES */
+.dropdown-menu input[type="checkbox"] {
+    accent-color: #a855f7;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE SELECTED GAME DISPLAY */
+@media (max-width: 768px) {
+    #gameDisplay .news-card {
+        max-width: 100%;
+    }
+
+    #gameDisplay .news-card h3 {
+        font-size: 20px;
+    }
+
+    #gameDisplay .news-card p {
+        font-size: 16px;
+    }
+}
+
+/* RESPONSIVE CART */
+@media (max-width: 600px) {
+    .dropdown-menu {
+        position: fixed;
+        top: auto;
+        left: 5%;
+        right: 5%;
+        bottom: 10px;
+        width: 90%;
+        max-width: none;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .cart-toggle {
+        font-size: 14px;
+    }
+}
+
+/* RESPONSIVE TRAILERS */
+.news-card iframe {
+    max-width: 100%;
+}
+
+/* RESPONSIVE SEARCH */
+@media (max-width: 1100px) {
+    .search {
+        flex-basis: 100%;
+        max-width: none;
+        margin-left: 0;
+    }
+}
+
+
