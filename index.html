@@ -1,35 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS HUB - Home</title>
+    <title>Home page</title>
 
+    <!-- Connect to style.css -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <link rel="icon" href="logo.jpg" type="image/jpg">
 </head>
 
 <body>
 
-    <!-- TOP HEADER -->
-    <header class="top-header">
 
-        <button class="menu" onclick="openMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="sideMenu">
+
+
+    <!-- TOP HEADER -->
+    <div class="top-header">
+
+        <button class="menu"
+                onclick="openMenu()"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="sideMenu">
             ☰
         </button>
 
+        <!-- LOGO + NAME -->
         <div class="logo">
-            <img src="logo.jpg" alt="Nexus Hub Logo">
+            <img src="logo.jpg" alt="Our Logo">
             <span class="logo-name">NEXUS HUB</span>
         </div>
 
-    </header>
+    </div>
 
-    <!-- SIDE MENU -->
+     <!-- SLIDING SIDE MENU -->
     <nav id="sideMenu" class="side-menu" aria-label="Main menu">
-        <button class="close-btn" onclick="closeMenu()" aria-label="Close menu">
+
+        <button class="close-btn"
+                onclick="closeMenu()"
+                aria-label="Close menu">
             &times;
         </button>
 
@@ -38,75 +49,72 @@
         <a href="company.html">Company</a>
         <a href="developers.html">Developers</a>
         <a href="Reference.html">References</a>
+
     </nav>
 
     <!-- NAVIGATION -->
-    <nav class="navbar" aria-label="Store navigation">
+    <div class="navbar">
 
         <div class="nav-links">
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
 
             <a href="browse.html">
-                Browse <span class="arrow">▼</span>
+                Browse
             </a>
 
             <!-- CART DROPDOWN -->
             <div class="nav-dropdown">
 
-                <a href="cart.html" aria-haspopup="true">
+                <a href="cart.html">
                     Cart <span class="arrow">▼</span>
                 </a>
 
                 <div class="dropdown-menu">
 
-                    <label><input type="checkbox" name="cart" value="Counter-Strike 2"> Counter-Strike 2</label>
-                    <label><input type="checkbox" name="cart" value="Valorant"> Valorant</label>
-                    <label><input type="checkbox" name="cart" value="League Of Legends"> League Of Legends</label>
-                    <label><input type="checkbox" name="cart" value="Dota 2"> Dota 2</label>
-                    <label><input type="checkbox" name="cart" value="Minecraft: Java Edition"> Minecraft: Java Edition</label>
-                    <label><input type="checkbox" name="cart" value="Grand Theft Auto V"> Grand Theft Auto V</label>
-                    <label><input type="checkbox" name="cart" value="Red Dead Redemption 2"> Red Dead Redemption 2</label>
-                    <label><input type="checkbox" name="cart" value="Black Myth: Wukong"> Black Myth: Wukong</label>
-                    <label><input type="checkbox" name="cart" value="The Witcher 3: Wild Hunt"> The Witcher 3: Wild Hunt</label>
-                    <label><input type="checkbox" name="cart" value="God of War Ragnarök"> God of War Ragnarök</label>
-                    <label><input type="checkbox" name="cart" value="TEKKEN 8"> TEKKEN 8</label>
-                    <label><input type="checkbox" name="cart" value="Outlast"> Outlast</label>
-                    <label><input type="checkbox" name="cart" value="Terraria"> Terraria</label>
-                    <label><input type="checkbox" name="cart" value="Left 4 Dead 2"> Left 4 Dead 2</label>
-                    <label><input type="checkbox" name="cart" value="Resident Evil 4"> Resident Evil 4</label>
-                    <label><input type="checkbox" name="cart" value="Mobile Legends: Bang Bang"> Mobile Legends: Bang Bang</label>
-                    <label><input type="checkbox" name="cart" value="Genshin Impact"> Genshin Impact</label>
-                    <label><input type="checkbox" name="cart" value="Honkai: Star Rail"> Honkai: Star Rail</label>
-                    <label><input type="checkbox" name="cart" value="PUBG Mobile"> PUBG Mobile</label>
-                    <label><input type="checkbox" name="cart" value="Call of Duty: Mobile"> Call of Duty: Mobile</label>
-                    <label><input type="checkbox" name="cart" value="Free Fire"> Free Fire</label>
-                    <label><input type="checkbox" name="cart" value="Clash of Clans"> Clash of Clans</label>
-                    <label><input type="checkbox" name="cart" value="Clash Royale"> Clash Royale</label>
-                    <label><input type="checkbox" name="cart" value="Roblox"> Roblox</label>
-                    <label><input type="checkbox" name="cart" value="Blood Strike"> Blood Strike</label>
-                    <label><input type="checkbox" name="cart" value="WarDogs"> WarDogs</label>
-                    <label><input type="checkbox" name="cart" value="Repo"> Repo</label>
-                    <label><input type="checkbox" name="cart" value="Among Us"> Among Us</label>
-                    <label><input type="checkbox" name="cart" value="Dead By Daylight"> Dead By Daylight</label>
-                    <label><input type="checkbox" name="cart" value="Clive Barker's Hellraiser: Revival"> Clive Barker's Hellraiser: Revival</label>
-                    <label><input type="checkbox" name="cart" value="Brawl Stars"> Brawl Stars</label>
+                    <label><input type="checkbox"> Counter-Strike 2</label>
+                    <label><input type="checkbox"> Valorant</label>
+                    <label><input type="checkbox"> League Of Legends</label>
+                    <label><input type="checkbox"> Dota 2</label>
+                    <label><input type="checkbox"> Minecraft: Java Edition</label>
+                    <label><input type="checkbox"> Grand Theft Auto V</label>
+                    <label><input type="checkbox"> Red Dead Redemption 2</label>
+                    <label><input type="checkbox"> Black Myth: Wukong</label>
+                    <label><input type="checkbox"> The Witcher 3: Wild Hunt</label>
+                    <label><input type="checkbox"> God of War Ragnarök</label>
+                    <label><input type="checkbox"> TEKKEN 8</label>
+                    <label><input type="checkbox"> Outlast</label>
+                    <label><input type="checkbox"> Terraria</label>
+                    <label><input type="checkbox"> Left 4 Dead 2</label>
+                    <label><input type="checkbox"> Resident Evil 4</label>
+                    <label><input type="checkbox"> Mobile Legends: Bang Bang</label>
+                    <label><input type="checkbox"> Genshin Impact</label>
+                    <label><input type="checkbox"> Honkai: Star Rail</label>
+                    <label><input type="checkbox"> PUBG Mobile</label>
+                    <label><input type="checkbox"> Call of Duty: Mobile</label>
+                    <label><input type="checkbox"> Free Fire</label>
+                    <label><input type="checkbox"> Clash of Clans</label>
+                    <label><input type="checkbox"> Clash Royale</label>
+                    <label><input type="checkbox"> Roblox</label>
+                    <label><input type="checkbox"> Blood Strike</label>
+                    <label><input type="checkbox"> WarDogs</label>
+                    <label><input type="checkbox"> Repo</label>
+                    <label><input type="checkbox"> Among Us</label>
+                    <label><input type="checkbox"> Dead By Daylight</label>
+                    <label><input type="checkbox"> Clive Barker's Hellraiser: Revival</label>
+                    <label><input type="checkbox"> Brawl Stars</label>
 
-                    <button type="button" class="checkout-btn" onclick="checkout()">Checkout</button>
+                    <button class="checkout-btn">Checkout</button>
 
                 </div>
-
             </div>
 
         </div>
 
-        <!-- SEARCH BAR -->
-        <form class="search" onsubmit="searchGames(event)">
-            <input id="searchInput" type="search" placeholder="Search the store" aria-label="Search the store">
-            <button type="submit" aria-label="Search">🔍</button>
-        </form>
-
-    </nav>
+      
+    </div>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
@@ -118,37 +126,33 @@
 
             <div class="news-container">
 
-                <article class="news-card">
+                <!-- FIRST GAME TRAILER -->
+                <div class="news-card">
 
-                    <video controls muted playsinline preload="metadata">
-                        <source src="gta.mp4" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
+                    <iframe class="hover-zoom" width="200" height="200" src="https://www.youtube.com/embed/hvoD7ehZPcM?autoplay=1&mute=1" title="Grand Theft Auto V: The Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Grand Theft Auto V is a 2013 action-adventure game
+                        Grand Theft Auto V is a 2013 action-adventure game 
                         developed by Rockstar North and published by Rockstar Games.
                     </p>
 
-                </article>
+                </div>
 
-                <article class="news-card">
+                <!-- SECOND GAME TRAILER -->
+                <div class="news-card">
 
-                    <video controls muted playsinline preload="metadata">
-                        <source src="wukong.mp4" type="video/mp4">
-                        Your browser does not support video playback.
-                    </video>
+                    <iframe class="hover-zoom" width="1341" height="582" src="https://www.youtube.com/embed/u83VdXAVq08?autoplay=1&mute=1 " title="Black Myth: Wukong - Pre-Order CG Trailer | PS5 Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Black Myth: Wukong is a 2024 action role-playing game
+                        Black Myth: Wukong is a 2024 action role-playing game 
                         developed and published by the Chinese studio Game Science.
                     </p>
 
-                </article>
+                </div>
 
             </div>
 
@@ -178,81 +182,11 @@
 
     </main>
 
-    <!-- BACKGROUND MUSIC -->
-    <audio id="backgroundMusic" controls loop preload="none">
-        <source src="ambient.mp3" type="audio/mpeg">
-        Your browser does not support audio playback.
-    </audio>
+    <audio controls autoplay loop onloadstart="this.volume = 0.05" hidden>
+    <source src="ambient.mp3" type="audio/mpeg">
+    
+<script src="menu.js"></script>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        const sideMenu = document.getElementById("sideMenu");
-        const menuButton = document.querySelector(".menu");
-
-        function openMenu() {
-            sideMenu.classList.add("active");
-            menuButton.setAttribute("aria-expanded", "true");
-        }
-
-        function closeMenu() {
-            sideMenu.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-
-        document.addEventListener("click", function (event) {
-            if (
-                sideMenu.classList.contains("active") &&
-                !sideMenu.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeMenu();
-            }
-        });
-
-        function checkout() {
-            const selectedGames = document.querySelectorAll(
-                '.dropdown-menu input[name="cart"]:checked'
-            );
-
-            if (selectedGames.length === 0) {
-                alert("Please select at least one game before checkout.");
-                return;
-            }
-
-            const games = Array.from(selectedGames).map(function (checkbox) {
-                return checkbox.value;
-            });
-
-            const confirmed = confirm(
-                "Proceed with these selected games?\n\n" + games.join("\n")
-            );
-
-            if (confirmed) {
-                sessionStorage.setItem("nexusCart", JSON.stringify(games));
-                window.location.href = "cart.html";
-            }
-        }
-
-        function searchGames(event) {
-            event.preventDefault();
-
-            const searchValue = document.getElementById("searchInput").value.trim();
-
-            if (searchValue === "") {
-                alert("Please enter a game name to search.");
-                return;
-            }
-
-            window.location.href = "browse.html?search=" +
-                encodeURIComponent(searchValue);
-        }
-    </script>
-
+</audio>
 </body>
 </html>

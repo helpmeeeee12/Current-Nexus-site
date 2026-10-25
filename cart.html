@@ -13,8 +13,19 @@
 
 <body>
 
+
+
+
     <!-- TOP HEADER -->
     <div class="top-header">
+
+        <button class="menu"
+                onclick="openMenu()"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="sideMenu">
+            ☰
+        </button>
 
         <!-- LOGO + NAME -->
         <div class="logo">
@@ -23,6 +34,23 @@
         </div>
 
     </div>
+
+     <!-- SLIDING SIDE MENU -->
+    <nav id="sideMenu" class="side-menu" aria-label="Main menu">
+
+        <button class="close-btn"
+                onclick="closeMenu()"
+                aria-label="Close menu">
+            &times;
+        </button>
+
+        <h2>NEXUS HUB</h2>
+
+        <a href="company.html">Company</a>
+        <a href="developers.html">Developers</a>
+        <a href="Reference.html">References</a>
+
+    </nav>
 
     <!-- NAVIGATION -->
     <div class="navbar">
@@ -34,7 +62,7 @@
             </a>
 
             <a href="browse.html">
-                Browse <span class="arrow">▼</span>
+                Browse
             </a>
 
             <!-- CART DROPDOWN -->
@@ -83,32 +111,9 @@
                 </div>
             </div>
 
-            <a href="company.html">
-                Company
-            </a>
-
-            <a href="developers.html">
-                Developers
-            </a>
-
-            <a href="Reference.html">
-                References
-            </a>
-
         </div>
 
-        <!-- SEARCH BAR -->
-        <div class="search">
-
-            <input
-                type="text"
-                placeholder="Search the store"
-            >
-
-            <button>🔍</button>
-
-        </div>
-
+      
     </div>
 
     <!-- MAIN CONTENT -->
@@ -124,9 +129,7 @@
                 <!-- FIRST GAME TRAILER -->
                 <div class="news-card">
 
-                    <video controls autoplay muted>
-                        <source src="gta.mp4" type="video/mp4">
-                    </video>
+                    <iframe class="hover-zoom" width="200" height="200" src="https://www.youtube.com/embed/hvoD7ehZPcM?autoplay=1&mute=1" title="Grand Theft Auto V: The Official Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                     <h3>Featured Game Trailer</h3>
 
@@ -140,9 +143,7 @@
                 <!-- SECOND GAME TRAILER -->
                 <div class="news-card">
 
-                    <video controls autoplay muted>
-                        <source src="wukong.mp4" type="video/mp4">
-                    </video>
+                    <iframe class="hover-zoom" width="1341" height="582" src="https://www.youtube.com/embed/u83VdXAVq08?autoplay=1&mute=1 " title="Black Myth: Wukong - Pre-Order CG Trailer | PS5 Games" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
                     <h3>Featured Game Trailer</h3>
 
@@ -181,9 +182,11 @@
 
     </main>
 
-    <audio controls autoplay loop onloadstart="this.volume = 0.05" muted >
+    <audio controls autoplay loop onloadstart="this.volume = 0.05" hidden>
     <source src="ambient.mp3" type="audio/mpeg">
     
+<script src="menu.js"></script>
+
 </audio>
 </body>
 </html>
