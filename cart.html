@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,56 +156,13 @@
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
-        <!-- NEWS SECTION -->
+        <!-- SELECTED GAME DISPLAY -->
         <section class="news-section">
 
-            <h2>News</h2>
+            <h2 id="displayTitle"></h2>
 
-            <div class="news-container">
-
-                <!-- GTA V TRAILER -->
-                <article class="news-card">
-
-                    <iframe
-                        class="hover-zoom"
-                        src="https://www.youtube.com/embed/hvoD7ehZPcM?mute=1"
-                        title="Grand Theft Auto V Official Trailer"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-
-                    <h3>Grand Theft Auto V</h3>
-
-                    <p>
-                        Grand Theft Auto V is an action-adventure game
-                        developed by Rockstar North and published by
-                        Rockstar Games.
-                    </p>
-
-                </article>
-
-                <!-- BLACK MYTH: WUKONG TRAILER -->
-                <article class="news-card">
-
-                    <iframe
-                        class="hover-zoom"
-                        src="https://www.youtube.com/embed/u83VdXAVq08?mute=1"
-                        title="Black Myth Wukong Trailer"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-
-                    <h3>Black Myth: Wukong</h3>
-
-                    <p>
-                        Black Myth: Wukong is an action role-playing game
-                        developed and published by Game Science.
-                    </p>
-
-                </article>
-
+            <div class="news-container" id="gameDisplay">
+                <!-- The selected game will appear here -->
             </div>
 
         </section>
@@ -280,6 +238,73 @@
             '#cartDropdown input[type="checkbox"]'
         );
 
+        // SELECTED GAME DISPLAY
+        const gameDisplay = document.getElementById("gameDisplay");
+        const displayTitle = document.getElementById("displayTitle");
+
+        // AVAILABLE TRAILERS
+        const gameTrailers = {
+            "Grand Theft Auto V": "hvoD7ehZPcM",
+            "Black Myth: Wukong": "u83VdXAVq08"
+        };
+
+        // DISPLAY THE SELECTED GAME ON THE HOME PAGE
+        function updateGameDisplay() {
+            const selectedGame = Array.from(cartCheckboxes).find(
+                function(item) {
+                    return item.checked;
+                }
+            );
+
+            // CLEAR THE PAGE IF NO GAME IS SELECTED
+            if (!selectedGame) {
+                gameDisplay.innerHTML = "";
+                displayTitle.textContent = "";
+                return;
+            }
+
+            const gameName = selectedGame.value;
+            const gamePrice = Number(selectedGame.dataset.price || 0);
+
+            displayTitle.textContent = gameName;
+            gameDisplay.innerHTML = "";
+
+            const card = document.createElement("article");
+            card.className = "news-card";
+
+            // SHOW TRAILER WHEN AVAILABLE
+            if (gameTrailers[gameName]) {
+                const iframe = document.createElement("iframe");
+
+                iframe.src =
+                    "https://www.youtube.com/embed/" +
+                    gameTrailers[gameName] + "?mute=1";
+
+                iframe.title = gameName + " trailer";
+                iframe.loading = "lazy";
+                iframe.allow =
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.allowFullscreen = true;
+
+                card.appendChild(iframe);
+            }
+
+            // GAME NAME
+            const heading = document.createElement("h3");
+            heading.textContent = gameName;
+            card.appendChild(heading);
+
+            // GAME PRICE
+            const price = document.createElement("p");
+
+            price.textContent = gamePrice === 0
+                ? "Price: Free"
+                : "Price: ₱" + gamePrice.toLocaleString("en-PH");
+
+            card.appendChild(price);
+            gameDisplay.appendChild(card);
+        }
+
         // UPDATE TOTAL AND CART COUNT
         function updateCartTotal() {
             let total = 0;
@@ -303,8 +328,14 @@
 
         // UPDATE WHEN A GAME IS SELECTED OR DESELECTED
         cartCheckboxes.forEach(function(item) {
-            item.addEventListener("change", updateCartTotal);
+            item.addEventListener("change", function() {
+                updateCartTotal();
+                updateGameDisplay();
+            });
         });
+
+        // START WITH AN EMPTY GAME DISPLAY
+        updateGameDisplay();
 
         // CHECKOUT
         function goToCheckout() {
@@ -371,47 +402,6 @@
             }
         });
 
-<script>
-function checkout() {
-    const selectedGames = document.querySelectorAll(
-        '.dropdown-menu input[type="checkbox"]:checked'
-    );
-
-    if (selectedGames.length === 0) {
-        alert("Please add at least one game to your cart first!");
-        return;
-    }
-
-    const cart = [];
-    let total = 0;
-
-    selectedGames.forEach(function (checkbox) {
-        const label = checkbox.closest("label");
-        const gameName = label
-            ? label.textContent.trim()
-            : checkbox.value;
-
-        // Get the price from the checkbox or its label.
-        const price = parseFloat(
-            checkbox.dataset.price ||
-            (label && label.dataset.price) ||
-            "0"
-        );
-
-        cart.push({
-            name: gameName,
-            price: price
-        });
-
-        total += price;
-    });
-
-    localStorage.setItem("nexusCart", JSON.stringify(cart));
-    localStorage.setItem("nexusTotal", total.toFixed(2));
-
-    window.location.href = "payment.html";
-}
-        
     </script>
 
 </body>
