@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | NEXUS HUB</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .payment-page {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            color: white;
+        }
+
+        .payment-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .payment-card {
+            background: rgba(20, 15, 35, 0.95);
+            border: 1px solid #8f00ff;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .payment-card h2 {
+            color: #d9a0ff;
+            margin-top: 0;
+        }
+
+        .payment-card label {
+            display: block;
+            margin: 14px 0 6px;
+        }
+
+        .payment-card input,
+        .payment-card select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #777;
+            background: #211b30;
+            color: white;
+        }
+
+        .payment-option {
+            display: flex !important;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #514361;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .payment-option input {
+            width: auto;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #514361;
+        }
+
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d9a0ff;
+            margin-top: 20px;
+        }
+
+        .pay-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 22px;
+            border: none;
+            border-radius: 7px;
+            background: #8f00ff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .pay-button:hover {
+            background: #a633ff;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #d9a0ff;
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+
+        #successMessage {
+            display: none;
+            background: #183d2b;
+            border: 1px solid #38b56b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .payment-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .payment-page {
+                margin: 15px auto;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="logo">
+            <img src="logo.jpg" alt="Nexus Hub Logo">
+            <span class="logo-name">NEXUS HUB</span>
+        </div>
+    </header>
+
+    <main class="payment-page">
+
+        <a href="index.html" class="back-link">
+            ← Back to Store
+        </a>
+
+        <h1>Checkout</h1>
+        <p>Review your games and choose your payment method.</p>
+
+        <form id="paymentForm">
+            <div class="payment-layout">
+
+                <section class="payment-card">
+                    <h2>Payment Information</h2>
+
+                    <label for="customerName">Full Name</label>
+                    <input type="text" id="customerName"
+                           autocomplete="name" required>
+
+                    <label for="customerEmail">Email Address</label>
+                    <input type="email" id="customerEmail"
+                           autocomplete="email" required>
+
+                    <h3>Choose Payment Method</h3>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="GCash" required>
+                        GCash
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="Maya">
+                        Maya
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="Credit/Debit Card">
+                        Credit / Debit Card
+                    </label>
+
+                    <label class="payment-option">
+                        <input type="radio" name="paymentMethod"
+                               value="Cash on Delivery">
+                        Cash on Delivery (demo)
+                    </label>
+
+                    <button type="submit" class="pay-button">
+                        Pay Now
+                    </button>
+
+                    <p style="font-size:12px;color:#bbb;">
+                        Demo checkout only. No real payment will be collected.
+                    </p>
+                </section>
+
+                <section class="payment-card">
+                    <h2>Your Order</h2>
+
+                    <div id="orderItems"></div>
+
+                    <div class="order-total">
+                        <span>Total</span>
+                        <span id="orderTotal">₱0.00</span>
+                    </div>
+
+                    <div id="successMessage" role="status">
+                        <h2>Order Confirmed!</h2>
+                        <p id="confirmationDetails"></p>
+                        <a href="index.html" class="back-link">
+                            Return to Store
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </form>
+    </main>
+
+    <script>
+        const cart = JSON.parse(
+            localStorage.getItem("nexusCart") || "[]"
+        );
+
+        const orderItems = document.getElementById("orderItems");
+        const orderTotal = document.getElementById("orderTotal");
+        const paymentForm = document.getElementById("paymentForm");
+
+        function money(amount) {
+            return "₱" + amount.toLocaleString("en-PH", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+
+        function renderOrder() {
+            orderItems.innerHTML = "";
+
+            if (cart.length === 0) {
+                orderItems.textContent = "Your cart is empty.";
+                orderTotal.textContent = money(0);
+
+                const button = paymentForm.querySelector(
+                    'button[type="submit"]'
+                );
+
+                button.disabled = true;
+                button.textContent = "Cart Empty";
+                return;
+            }
+
+            cart.forEach(function(game) {
+                const row = document.createElement("div");
+                row.className = "order-item";
+
+                const name = document.createElement("span");
+                name.textContent = game.name;
+
+                const price = document.createElement("span");
+                price.textContent = money(game.price);
+
+                row.append(name, price);
+                orderItems.appendChild(row);
+            });
+
+            const total = cart.reduce(
+                (sum, game) => sum + Number(game.price), 0
+            );
+
+            orderTotal.textContent = money(total);
+        }
+
+        paymentForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+                return;
+            }
+
+            const name = document.getElementById("customerName").value.trim();
+            const email = document.getElementById("customerEmail").value.trim();
+            const method = document.querySelector(
+                'input[name="paymentMethod"]:checked'
+            );
+
+            if (!name || !email || !method) {
+                alert("Please complete all required information.");
+                return;
+            }
+
+            const total = cart.reduce(
+                (sum, game) => sum + Number(game.price), 0
+            );
+
+            const orderNumber = "NX-" +
+                Date.now().toString().slice(-8);
+
+            document.getElementById("confirmationDetails").textContent =
+                "Thank you, " + name +
+                "! Your demo order " + orderNumber +
+                " has been confirmed. Total: " + money(total) +
+                ". Payment method: " + method.value +
+                ". A real payment has NOT been processed.";
+
+            document.getElementById("successMessage").style.display = "block";
+
+            paymentForm.querySelectorAll("input, button").forEach(function(el) {
+                el.disabled = true;
+            });
+
+            localStorage.removeItem("nexusCart");
+
+            document.getElementById("successMessage").scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+
+        renderOrder();
+    </script>
+
+</body>
+</html>

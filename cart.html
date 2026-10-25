@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title>Home page | NEXUS HUB</title>
 
-    <!-- Connect to style.css -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="logo.jpg" type="image/jpg">
 </head>
@@ -27,7 +27,14 @@
             ☰
         </button>
 
-        <!-- LOGO + NAME -->
+        <button class="menu"
+                onclick="openMenu()"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="sideMenu">
+            ☰
+        </button>
+
         <div class="logo">
             <img src="logo.jpg" alt="Our Logo">
             <span class="logo-name">NEXUS HUB</span>
@@ -57,9 +64,7 @@
 
         <div class="nav-links">
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
             <a href="browse.html">
                 Browse
@@ -74,46 +79,70 @@
 
                 <div class="dropdown-menu">
 
-                    <label><input type="checkbox"> Counter-Strike 2</label>
-                    <label><input type="checkbox"> Valorant</label>
-                    <label><input type="checkbox"> League Of Legends</label>
-                    <label><input type="checkbox"> Dota 2</label>
-                    <label><input type="checkbox"> Minecraft: Java Edition</label>
-                    <label><input type="checkbox"> Grand Theft Auto V</label>
-                    <label><input type="checkbox"> Red Dead Redemption 2</label>
-                    <label><input type="checkbox"> Black Myth: Wukong</label>
-                    <label><input type="checkbox"> The Witcher 3: Wild Hunt</label>
-                    <label><input type="checkbox"> God of War Ragnarök</label>
-                    <label><input type="checkbox"> TEKKEN 8</label>
-                    <label><input type="checkbox"> Outlast</label>
-                    <label><input type="checkbox"> Terraria</label>
-                    <label><input type="checkbox"> Left 4 Dead 2</label>
-                    <label><input type="checkbox"> Resident Evil 4</label>
-                    <label><input type="checkbox"> Mobile Legends: Bang Bang</label>
-                    <label><input type="checkbox"> Genshin Impact</label>
-                    <label><input type="checkbox"> Honkai: Star Rail</label>
-                    <label><input type="checkbox"> PUBG Mobile</label>
-                    <label><input type="checkbox"> Call of Duty: Mobile</label>
-                    <label><input type="checkbox"> Free Fire</label>
-                    <label><input type="checkbox"> Clash of Clans</label>
-                    <label><input type="checkbox"> Clash Royale</label>
-                    <label><input type="checkbox"> Roblox</label>
-                    <label><input type="checkbox"> Blood Strike</label>
-                    <label><input type="checkbox"> WarDogs</label>
-                    <label><input type="checkbox"> Repo</label>
-                    <label><input type="checkbox"> Among Us</label>
-                    <label><input type="checkbox"> Dead By Daylight</label>
-                    <label><input type="checkbox"> Clive Barker's Hellraiser: Revival</label>
-                    <label><input type="checkbox"> Brawl Stars</label>
+                    <label><input type="checkbox" value="Counter-Strike 2" data-price="0"> Counter-Strike 2 — Free</label>
+                    <label><input type="checkbox" value="Valorant" data-price="0"> Valorant — Free</label>
+                    <label><input type="checkbox" value="League Of Legends" data-price="0"> League Of Legends — Free</label>
+                    <label><input type="checkbox" value="Dota 2" data-price="0"> Dota 2 — Free</label>
+                    <label><input type="checkbox" value="Minecraft: Java Edition" data-price="1499"> Minecraft: Java Edition — ₱1,499</label>
+                    <label><input type="checkbox" value="Grand Theft Auto V" data-price="1499"> Grand Theft Auto V — ₱1,499</label>
+                    <label><input type="checkbox" value="Red Dead Redemption 2" data-price="1999"> Red Dead Redemption 2 — ₱1,999</label>
+                    <label><input type="checkbox" value="Black Myth: Wukong" data-price="2999"> Black Myth: Wukong — ₱2,999</label>
+                    <label><input type="checkbox" value="The Witcher 3: Wild Hunt" data-price="999"> The Witcher 3: Wild Hunt — ₱999</label>
+                    <label><input type="checkbox" value="God of War Ragnarök" data-price="2999"> God of War Ragnarök — ₱2,999</label>
+                    <label><input type="checkbox" value="TEKKEN 8" data-price="2999"> TEKKEN 8 — ₱2,999</label>
+                    <label><input type="checkbox" value="Outlast" data-price="499"> Outlast — ₱499</label>
+                    <label><input type="checkbox" value="Terraria" data-price="299"> Terraria — ₱299</label>
+                    <label><input type="checkbox" value="Left 4 Dead 2" data-price="199"> Left 4 Dead 2 — ₱199</label>
+                    <label><input type="checkbox" value="Resident Evil 4" data-price="2399"> Resident Evil 4 — ₱2,399</label>
+                    <label><input type="checkbox" value="Mobile Legends: Bang Bang" data-price="0"> Mobile Legends: Bang Bang — Free</label>
+                    <label><input type="checkbox" value="Genshin Impact" data-price="0"> Genshin Impact — Free</label>
+                    <label><input type="checkbox" value="Honkai: Star Rail" data-price="0"> Honkai: Star Rail — Free</label>
+                    <label><input type="checkbox" value="PUBG Mobile" data-price="0"> PUBG Mobile — Free</label>
+                    <label><input type="checkbox" value="Call of Duty: Mobile" data-price="0"> Call of Duty: Mobile — Free</label>
+                    <label><input type="checkbox" value="Free Fire" data-price="0"> Free Fire — Free</label>
+                    <label><input type="checkbox" value="Clash of Clans" data-price="0"> Clash of Clans — Free</label>
+                    <label><input type="checkbox" value="Clash Royale" data-price="0"> Clash Royale — Free</label>
+                    <label><input type="checkbox" value="Roblox" data-price="0"> Roblox — Free</label>
+                    <label><input type="checkbox" value="Blood Strike" data-price="0"> Blood Strike — Free</label>
+                    <label><input type="checkbox" value="WarDogs" data-price="499"> WarDogs — ₱499</label>
+                    <label><input type="checkbox" value="Repo" data-price="399"> REPO — ₱399</label>
+                    <label><input type="checkbox" value="Among Us" data-price="99"> Among Us — ₱99</label>
+                    <label><input type="checkbox" value="Dead By Daylight" data-price="799"> Dead By Daylight — ₱799</label>
+                    <label><input type="checkbox" value="Clive Barker's Hellraiser: Revival" data-price="2499"> Clive Barker's Hellraiser: Revival — ₱2,499</label>
+                    <label><input type="checkbox" value="Brawl Stars" data-price="0"> Brawl Stars — Free</label>
 
-                    <button class="checkout-btn">Checkout</button>
+                    <!-- CART TOTAL -->
+                    <div class="cart-total">
+                        Total: <span id="cartTotal">₱0.00</span>
+                    </div>
+
+                    <!-- CHECKOUT BUTTON -->
+                    <button type="button"
+                            class="checkout-btn"
+                            onclick="goToCheckout()">
+                        Checkout
+                    </button>
 
                 </div>
             </div>
 
+            <a href="company.html">Company</a>
+
+            <a href="developers.html">Developers</a>
+
+            <a href="Reference.html">References</a>
+
         </div>
 
-      
+        <!-- SEARCH BAR -->
+        <div class="search">
+
+            <input type="text" placeholder="Search the store">
+
+            <button type="button">🔍</button>
+
+        </div>
+
     </div>
 
     <!-- MAIN CONTENT -->
@@ -134,7 +163,7 @@
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Grand Theft Auto V is a 2013 action-adventure game 
+                        Grand Theft Auto V is a 2013 action-adventure game
                         developed by Rockstar North and published by Rockstar Games.
                     </p>
 
@@ -148,7 +177,7 @@
                     <h3>Featured Game Trailer</h3>
 
                     <p>
-                        Black Myth: Wukong is a 2024 action role-playing game 
+                        Black Myth: Wukong is a 2024 action role-playing game
                         developed and published by the Chinese studio Game Science.
                     </p>
 
@@ -182,11 +211,80 @@
 
     </main>
 
-    <audio controls autoplay loop onloadstart="this.volume = 0.05" hidden>
-    <source src="ambient.mp3" type="audio/mpeg">
-    
-<script src="menu.js"></script>
+    <!-- BACKGROUND AUDIO -->
+    <audio controls autoplay loop onloadstart="this.volume = 0.05" muted>
+        <source src="ambient.mp3" type="audio/mpeg">
+    </audio>
 
-</audio>
+    <!-- CHECKOUT JAVASCRIPT -->
+    <script>
+
+        const cartCheckboxes = document.querySelectorAll(
+            '.dropdown-menu input[type="checkbox"]'
+        );
+
+        // Calculate the total price
+        function updateCartTotal() {
+
+            let total = 0;
+
+            cartCheckboxes.forEach(function(item) {
+
+                if (item.checked) {
+                    total += Number(item.dataset.price || 0);
+                }
+
+            });
+
+            document.getElementById("cartTotal").textContent =
+                "₱" + total.toLocaleString("en-PH", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+
+        }
+
+        // Update the total whenever a game is selected
+        cartCheckboxes.forEach(function(item) {
+            item.addEventListener("change", updateCartTotal);
+        });
+
+        // Proceed to the payment page
+        function goToCheckout() {
+
+            const selectedGames = [];
+
+            cartCheckboxes.forEach(function(item) {
+
+                if (item.checked) {
+
+                    selectedGames.push({
+                        name: item.value,
+                        price: Number(item.dataset.price || 0)
+                    });
+
+                }
+
+            });
+
+            // Prevent checkout if the cart is empty
+            if (selectedGames.length === 0) {
+                alert("Your cart is empty! Please select a game first.");
+                return;
+            }
+
+            // Save selected games for payment.html
+            localStorage.setItem(
+                "nexusCart",
+                JSON.stringify(selectedGames)
+            );
+
+            // Open the payment page
+            window.location.href = "payment.html";
+
+        }
+
+    </script>
+
 </body>
 </html>
