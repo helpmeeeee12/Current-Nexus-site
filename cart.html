@@ -371,6 +371,47 @@
             }
         });
 
+<script>
+function checkout() {
+    const selectedGames = document.querySelectorAll(
+        '.dropdown-menu input[type="checkbox"]:checked'
+    );
+
+    if (selectedGames.length === 0) {
+        alert("Please add at least one game to your cart first!");
+        return;
+    }
+
+    const cart = [];
+    let total = 0;
+
+    selectedGames.forEach(function (checkbox) {
+        const label = checkbox.closest("label");
+        const gameName = label
+            ? label.textContent.trim()
+            : checkbox.value;
+
+        // Get the price from the checkbox or its label.
+        const price = parseFloat(
+            checkbox.dataset.price ||
+            (label && label.dataset.price) ||
+            "0"
+        );
+
+        cart.push({
+            name: gameName,
+            price: price
+        });
+
+        total += price;
+    });
+
+    localStorage.setItem("nexusCart", JSON.stringify(cart));
+    localStorage.setItem("nexusTotal", total.toFixed(2));
+
+    window.location.href = "payment.html";
+}
+        
     </script>
 
 </body>
