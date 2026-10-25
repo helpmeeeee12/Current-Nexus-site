@@ -250,59 +250,65 @@
 
         // DISPLAY THE SELECTED GAME ON THE HOME PAGE
         function updateGameDisplay() {
-            const selectedGame = Array.from(cartCheckboxes).find(
+            const selectedGames = Array.from(cartCheckboxes).filter(
                 function(item) {
                     return item.checked;
                 }
             );
 
             // CLEAR THE PAGE IF NO GAME IS SELECTED
-            if (!selectedGame) {
-                gameDisplay.innerHTML = "";
-                displayTitle.textContent = "";
+            gameDisplay.innerHTML = "";
+            displayTitle.textContent = "";
+
+            if (selectedGames.length === 0) {
                 return;
             }
 
-            const gameName = selectedGame.value;
-            const gamePrice = Number(selectedGame.dataset.price || 0);
+            displayTitle.textContent = "Your Selected Games";
 
-            displayTitle.textContent = gameName;
-            gameDisplay.innerHTML = "";
+            // DISPLAY ALL SELECTED GAMES
+            selectedGames.forEach(function(selectedGame) {
+                const gameName = selectedGame.value;
+                const gamePrice = Number(selectedGame.dataset.price || 0);
 
-            const card = document.createElement("article");
-            card.className = "news-card";
+                const card = document.createElement("article");
+                card.className = "news-card";
 
-            // SHOW TRAILER WHEN AVAILABLE
-            if (gameTrailers[gameName]) {
-                const iframe = document.createElement("iframe");
+                // SHOW TRAILER WHEN AVAILABLE
+                if (gameTrailers[gameName]) {
+                    const iframe = document.createElement("iframe");
 
-                iframe.src =
-                    "https://www.youtube.com/embed/" +
-                    gameTrailers[gameName] + "?mute=1";
+                    iframe.src =
+                        "https://www.youtube.com/embed/" +
+                        gameTrailers[gameName] + "?mute=1";
 
-                iframe.title = gameName + " trailer";
-                iframe.loading = "lazy";
-                iframe.allow =
-                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-                iframe.allowFullscreen = true;
+                    iframe.title = gameName + " trailer";
+                    iframe.loading = "lazy";
+                    iframe.allow =
+                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                    iframe.allowFullscreen = true;
 
-                card.appendChild(iframe);
-            }
+                    card.appendChild(iframe);
+                }
 
-            // GAME NAME
-            const heading = document.createElement("h3");
-            heading.textContent = gameName;
-            card.appendChild(heading);
+                // GAME NAME
+                const heading = document.createElement("h3");
+                heading.textContent = gameName;
+                card.appendChild(heading);
 
-            // GAME PRICE
-            const price = document.createElement("p");
+                // GAME PRICE
+                const price = document.createElement("p");
 
-            price.textContent = gamePrice === 0
-                ? "Price: Free"
-                : "Price: ₱" + gamePrice.toLocaleString("en-PH");
+                price.textContent = gamePrice === 0
+                    ? "Price: Free"
+                    : "Price: ₱" + gamePrice.toLocaleString("en-PH", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
 
-            card.appendChild(price);
-            gameDisplay.appendChild(card);
+                card.appendChild(price);
+                gameDisplay.appendChild(card);
+            });
         }
 
         // UPDATE TOTAL AND CART COUNT
@@ -335,6 +341,7 @@
         });
 
         // START WITH AN EMPTY GAME DISPLAY
+        updateCartTotal();
         updateGameDisplay();
 
         // CHECKOUT
