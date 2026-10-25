@@ -1,80 +1,126 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft | NEXUS HUB</title>
-
-    <!-- Connect to style.css -->
+    <title>Counter Strike 2 | NEXUS HUB</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
 </head>
 
 <body>
 
     <!-- TOP HEADER -->
-    <div class="top-header">
+    <header class="top-header">
 
-        <!-- LOGO + NAME -->
+        <button
+            class="menu"
+            onclick="openMenu()"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="sideMenu"
+        >☰</button>
+
         <div class="logo">
-            <img src="logo.jpg" alt="Our Logo">
+            <img src="logo.jpg" alt="NEXUS HUB Logo">
             <span class="logo-name">NEXUS HUB</span>
         </div>
 
-    </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <nav id="sideMenu" class="side-menu" aria-label="Main menu">
+
+        <button
+            class="close-btn"
+            onclick="closeMenu()"
+            aria-label="Close menu"
+        >&times;</button>
+
+        <h2>NEXUS HUB</h2>
+
+        <a href="company.html">Company</a>
+        <a href="developers.html">Developers</a>
+        <a href="Reference.html">References</a>
+
+    </nav>
 
     <!-- NAVIGATION -->
-    <div class="navbar">
+    <nav class="navbar">
 
         <div class="nav-links">
 
-            <a href="index.html">
-                Home
-            </a>
+            <a href="index.html">Home</a>
 
-            <a href="browse.html">
-                Browse ▼
-            </a>
+            <a href="browse.html">Browse <span class="arrow">▼</span></a>
 
-            <a href="#">
-                Cart ▼
-            </a>
+            <div class="nav-dropdown">
 
-            <a href="company.html">
-                Company
-            </a>
+                <a href="cart.html">Cart <span class="arrow">▼</span></a>
 
-            <a href="developers.html">
-                Developers
-            </a>
+                <div class="dropdown-menu">
 
-            <a href="references.html">
-                References
-            </a>
+                    <label><input type="checkbox" name="cart" value="Counter-Strike 2"> Counter-Strike 2</label>
+                    <label><input type="checkbox" name="cart" value="Valorant"> Valorant</label>
+                    <label><input type="checkbox" name="cart" value="League Of Legends"> League of Legends</label>
+                    <label><input type="checkbox" name="cart" value="Dota 2"> Dota 2</label>
+                    <label><input type="checkbox" name="cart" value="Minecraft: Java Edition"> Minecraft: Java Edition</label>
+                    <label><input type="checkbox" name="cart" value="Grand Theft Auto V"> Grand Theft Auto V</label>
+                    <label><input type="checkbox" name="cart" value="Red Dead Redemption 2"> Red Dead Redemption 2</label>
+                    <label><input type="checkbox" name="cart" value="Black Myth: Wukong"> Black Myth: Wukong</label>
+                    <label><input type="checkbox" name="cart" value="The Witcher 3: Wild Hunt"> The Witcher 3: Wild Hunt</label>
+                    <label><input type="checkbox" name="cart" value="God of War Ragnarök"> God of War Ragnarök</label>
+                    <label><input type="checkbox" name="cart" value="TEKKEN 8"> TEKKEN 8</label>
+                    <label><input type="checkbox" name="cart" value="Outlast"> Outlast</label>
+                    <label><input type="checkbox" name="cart" value="Terraria"> Terraria</label>
+                    <label><input type="checkbox" name="cart" value="Left 4 Dead 2"> Left 4 Dead 2</label>
+                    <label><input type="checkbox" name="cart" value="Resident Evil 4"> Resident Evil 4</label>
+                    <label><input type="checkbox" name="cart" value="Mobile Legends: Bang Bang"> Mobile Legends: Bang Bang</label>
+                    <label><input type="checkbox" name="cart" value="Genshin Impact"> Genshin Impact</label>
+                    <label><input type="checkbox" name="cart" value="Honkai: Star Rail"> Honkai: Star Rail</label>
+                    <label><input type="checkbox" name="cart" value="PUBG Mobile"> PUBG Mobile</label>
+                    <label><input type="checkbox" name="cart" value="Call of Duty: Mobile"> Call of Duty: Mobile</label>
+                    <label><input type="checkbox" name="cart" value="Free Fire"> Free Fire</label>
+                    <label><input type="checkbox" name="cart" value="Clash of Clans"> Clash of Clans</label>
+                    <label><input type="checkbox" name="cart" value="Clash Royale"> Clash Royale</label>
+                    <label><input type="checkbox" name="cart" value="Roblox"> Roblox</label>
+                    <label><input type="checkbox" name="cart" value="Blood Strike"> Blood Strike</label>
+                    <label><input type="checkbox" name="cart" value="Pokémon GO"> Pokémon GO</label>
+                    <label><input type="checkbox" name="cart" value="Subway Surfers"> Subway Surfers</label>
+                    <label><input type="checkbox" name="cart" value="Among Us"> Among Us</label>
+                    <label><input type="checkbox" name="cart" value="Asphalt Legends Unite"> Asphalt Legends Unite</label>
+                    <label><input type="checkbox" name="cart" value="Brawl Stars"> Brawl Stars</label>
+                    <label><input type="checkbox" name="cart" value="R.E.P.O."> R.E.P.O.</label>
+
+                    <button type="button" class="checkout-btn" onclick="checkout()">Checkout</button>
+
+                </div>
+
+            </div>
 
         </div>
 
         <!-- SEARCH BAR -->
-        <div class="search">
-
+        <form class="search" onsubmit="searchGames(event)">
             <input
-                type="text"
-                placeholder="Search the store"
+                id="searchInput"
+                type="search"
+                placeholder="Search Games"
+                aria-label="Search games"
             >
+            <button type="submit" aria-label="Search">🔍</button>
+        </form>
 
-            <button>🔍</button>
+    </nav>
 
-        </div>
+    <!-- GAME TRAILER AND DESCRIPTION -->
+    <main class="game-container">
 
-    </div>
-    
-   <!--Trailer and Description-->
-    <div class="game-container">
-
-    <!-- TOP BOX -->
-    <div class="top-centering"> 
-    <div class="top-box" >
-       <iframe width="1000" 
+        <!-- TRAILER -->
+        <div class="top-centering">
+            <div class="top-box">
+            <iframe width="1000" 
             height="500" 
             src="https://youtu.be/c80dVYcL69E?si=hqaQI5TvCzaEuIVB" 
             title="Counter Strike 2 Trailer" 
@@ -82,32 +128,93 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </iframe>
-    </div></div>
-
-    <!-- TWO BOTTOM BOXES -->
-    <div class="bottom-boxes">
-
-        <div class="bottom-box">
-            <h2>Counter Strike 2</h2>
-            <p>
-               Counter-Strike 2 is a competitive first-person shooter where players compete in teams. 
-                Teamwork, strategy, communication, and accuracy are important to win each round.
+            </div>
         </div>
 
-        <div class="bottom-box">
-            <h2>System Requirements</h2>
-            <p> OS: Windows 10<br>
-                RAM: 8 GB<br>
-                CPU: Intel Core i5 750 or higher<br>
-                Storage: 85 GB<br>
-                DirectX: 9.0c
-            </p>
+        <!-- DESCRIPTION AND SYSTEM REQUIREMENTS -->
+        <div class="bottom-boxes">
+
+            <section class="bottom-box">
+                <h2>Counter Strike 2</h2>
+                <p>
+                    Counter-Strike 2 is a competitive first-person shooter where players compete in teams. 
+                    Teamwork, strategy, communication, and accuracy are important to win each round.
+                </p>
+            </section>
+
+            <section class="bottom-box">
+                <h2>System Requirements</h2>
+                    <p> OS: Windows 10<br>
+                    RAM: 8 GB<br>
+                    CPU: Intel Core i5 750 or higher<br>
+                    Storage: 85 GB<br>    
+                    DirectX: 9.0c
+            </section>
+
         </div>
 
-    </div>
+    </main>
 
-</div>
-    
+    <script>
+        const sideMenu = document.getElementById("sideMenu");
+        const menuButton = document.querySelector(".menu");
+
+        function openMenu() {
+            sideMenu.classList.add("active");
+            menuButton.setAttribute("aria-expanded", "true");
+        }
+
+        function closeMenu() {
+            sideMenu.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+        }
+
+        document.addEventListener("click", function (event) {
+            if (
+                sideMenu.classList.contains("active") &&
+                !sideMenu.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
+
+        function checkout() {
+            const selectedGames = document.querySelectorAll(
+                '.dropdown-menu input[name="cart"]:checked'
+            );
+
+            if (selectedGames.length === 0) {
+                alert("Please select at least one game before checkout.");
+                return;
+            }
+
+            const games = Array.from(selectedGames).map(function (checkbox) {
+                return checkbox.value;
+            });
+
+            sessionStorage.setItem("nexusCart", JSON.stringify(games));
+            window.location.href = "cart.html";
+        }
+
+        function searchGames(event) {
+            event.preventDefault();
+
+            const query = document.getElementById("searchInput").value.trim();
+
+            if (query) {
+                window.location.href = "browse.html?search=" + encodeURIComponent(query);
+            } else {
+                window.location.href = "browse.html";
+            }
+        }
+    </script>
 
 </body>
 </html>
