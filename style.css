@@ -896,3 +896,138 @@ iframe.hover-zoom:hover {
     transform: scale(1.1);
     z-index: 10;
 }
+
+/* CART BUTTON */
+.cart-toggle {
+    background: transparent;
+    border: none;
+    color: #eee;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.cart-toggle:hover {
+    color: #d98cff;
+}
+
+#cartCount {
+    color: #d98cff;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* CART DROPDOWN FUNCTIONALITY */
+.nav-dropdown:hover .dropdown-menu:not(.active),
+.nav-dropdown:focus-within .dropdown-menu:not(.active) {
+    display: none;
+}
+
+.nav-dropdown .dropdown-menu.active {
+    display: block;
+}
+
+/* CART TOTAL */
+.cart-total {
+    position: sticky;
+    bottom: 43px;
+    padding: 12px;
+    background: rgb(30, 10, 50);
+    color: white;
+    border-top: 1px solid rgb(168, 85, 247);
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* CHECKOUT BUTTON */
+.checkout-btn {
+    position: sticky;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: rgb(168, 85, 247);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.checkout-btn:hover {
+    background: #7e22ce;
+}
+
+/* CART CHECKBOXES */
+.dropdown-menu input[type="checkbox"] {
+    accent-color: #a855f7;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* MENU BACKDROP */
+.menu-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1999;
+}
+
+.menu-backdrop.active {
+    display: block;
+}
+
+/* KEEP MENU ABOVE BACKDROP */
+.side-menu {
+    z-index: 2000;
+}
+
+.menu {
+    z-index: 2001;
+}
+
+/* SEARCH FORM */
+.search {
+    align-items: stretch;
+}
+
+.search button {
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE CART */
+@media (max-width: 600px) {
+    .dropdown-menu {
+        position: fixed;
+        top: auto;
+        left: 5%;
+        right: 5%;
+        bottom: 10px;
+        width: 90%;
+        max-width: none;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .cart-toggle {
+        font-size: 14px;
+    }
+}
+
+/* RESPONSIVE TRAILERS */
+.news-card iframe {
+    max-width: 100%;
+}
+
+/* RESPONSIVE SEARCH */
+@media (max-width: 1100px) {
+    .search {
+        flex-basis: 100%;
+        max-width: none;
+        margin-left: 0;
+    }
+}
+
