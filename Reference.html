@@ -54,8 +54,7 @@
 
             <a href="index.html">Home</a>
 
-            <a href="browse.html">Browse <span class="arrow">▼</span></a>
-
+            <a href="browse.html">Browse
             <div class="nav-dropdown">
 
                 <a href="cart.html">Cart <span class="arrow">▼</span></a>
@@ -144,86 +143,28 @@
             <li><a href="https://en.wikipedia.org/wiki/PUBG_Mobile" target="_blank" rel="noopener noreferrer">PUBG Mobile - Wikipedia</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Call_of_Duty:_Mobile" target="_blank" rel="noopener noreferrer">Call of Duty: Mobile - Wikipedia</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Free_Fire_(video_game)" target="_blank" rel="noopener noreferrer">Free Fire (video game) - Wikipedia</a></li>
-            <li><a href="https://simple.wikipedia.org/wiki/Clash_of_Clans" target="_blank" rel="noopener noreferrer">Clash of Clans - Simple English Wikipedia</a></li>
+            <li><a href="https://simple.wikipedia.org/wiki/Clash_of_Clans" target="_blank" rel="noopener noreferrer">Clash of Clans - Simple English Wikipedia, the free encyclopedia</a></li>
             <li><a href="https://clashroyale.fandom.com/wiki/Cards" target="_blank" rel="noopener noreferrer">Cards | Clash Royale Wiki | Fandom</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Roblox" target="_blank" rel="noopener noreferrer">Roblox - Wikipedia</a></li>
             <li><a href="https://blood-strike-fps.fandom.com/wiki/Blood_Strike_Wiki" target="_blank" rel="noopener noreferrer">Blood Strike Wiki | Fandom</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Pok%C3%A9mon_Go" target="_blank" rel="noopener noreferrer">Pokémon Go - Wikipedia</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Subway_Surfers" target="_blank" rel="noopener noreferrer">Subway Surfers - Wikipedia</a></li>
+            <li><a href="https://www.wardogs.com/" target="_blank" rel="noopener noreferrer">WarDogs - Official Website</a></li>
+            <li><a href="https://store.steampowered.com/app/3241660/REPO/" target="_blank" rel="noopener noreferrer">REPO - Steam</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Among_Us" target="_blank" rel="noopener noreferrer">Among Us - Wikipedia</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Asphalt_Legends" target="_blank" rel="noopener noreferrer">Asphalt Legends - Wikipedia</a></li>
+            <li><a href="https://repo-2025horror.fandom.com/wiki/Repo_Wiki" target="_blank" rel="noopener noreferrer">Repo Wiki | Fandom</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Brawl_Stars" target="_blank" rel="noopener noreferrer">Brawl Stars - Wikipedia</a></li>
+            <li><a href="https://deadbydaylight.wiki.gg/" target="_blank" rel="noopener noreferrer">Official Dead by Daylight Wiki</a></li>
+            <li><a href="https://www.gematsu.com/games/clive-barkers-hellraiser-revival" target="_blank" rel="noopener noreferrer">Clive Barker's Hellraiser: Revival - Gematsu</a></li>
         </ul>
 
         <p>“I affirm that I have not given or received any unauthorized help on this assignment and that this work is my own.”</p>
 
-        <audio controls loop preload="none">
-            <source src="ambient.mp3" type="audio/mpeg">
-            Your browser does not support audio playback.
-        </audio>
+        <audio controls autoplay loop onloadstart="this.volume = 0.01" hidden>
+    <source src="ambient.mp3" type="audio/mpeg">
 
     </main>
 
-    <script>
-        const sideMenu = document.getElementById("sideMenu");
-        const menuButton = document.querySelector(".menu");
+   
 
-        function openMenu() {
-            sideMenu.classList.add("active");
-            menuButton.setAttribute("aria-expanded", "true");
-        }
-
-        function closeMenu() {
-            sideMenu.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-
-        document.addEventListener("click", function (event) {
-            if (
-                sideMenu.classList.contains("active") &&
-                !sideMenu.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeMenu();
-            }
-        });
-
-        function checkout() {
-            const selectedGames = document.querySelectorAll(
-                '.dropdown-menu input[name="cart"]:checked'
-            );
-
-            if (selectedGames.length === 0) {
-                alert("Please select at least one game before checkout.");
-                return;
-            }
-
-            const games = Array.from(selectedGames).map(function (checkbox) {
-                return checkbox.value;
-            });
-
-            sessionStorage.setItem("nexusCart", JSON.stringify(games));
-            window.location.href = "cart.html";
-        }
-
-        function searchGames(event) {
-            event.preventDefault();
-
-            const query = document.getElementById("searchInput").value.trim();
-
-            if (query) {
-                window.location.href = "browse.html?search=" + encodeURIComponent(query);
-            } else {
-                window.location.href = "browse.html";
-            }
-        }
-    </script>
-
+<script src="menu.js"></script>
 </body>
 </html>

@@ -62,74 +62,19 @@
     </div>
 
     <!-- NAVIGATION BAR -->
-    <nav class="navbar">
+   <nav class="navbar" aria-label="Store navigation">
 
         <div class="nav-links">
 
-            <a href="index.html">Home</a>
-            <a href="browse.html">Browse</a>
+            <a href="index.html">
+                Home</a>
+
+            <a href="browse.html">
+                Browse
+            </a>
 
             <!-- CART DROPDOWN -->
-            <div class="nav-dropdown">
-
-                <button type="button"
-                        class="cart-toggle"
-                        onclick="toggleCart()"
-                        aria-expanded="false"
-                        id="cartToggle">
-                    Cart ▼
-                    <span id="cartCount">0</span>
-                </button>
-
-                <div class="dropdown-menu" id="cartDropdown">
-
-                    <label><input type="checkbox" value="Counter-Strike 2" data-price="0"> Counter-Strike 2 — Free</label>
-                    <label><input type="checkbox" value="Valorant" data-price="0"> Valorant — Free</label>
-                    <label><input type="checkbox" value="League Of Legends" data-price="0"> League of Legends — Free</label>
-                    <label><input type="checkbox" value="Dota 2" data-price="0"> Dota 2 — Free</label>
-                    <label><input type="checkbox" value="Minecraft: Java Edition" data-price="1499"> Minecraft: Java Edition — ₱1,499</label>
-                    <label><input type="checkbox" value="Grand Theft Auto V" data-price="1499"> Grand Theft Auto V — ₱1,499</label>
-                    <label><input type="checkbox" value="Red Dead Redemption 2" data-price="1999"> Red Dead Redemption 2 — ₱1,999</label>
-                    <label><input type="checkbox" value="Black Myth: Wukong" data-price="2999"> Black Myth: Wukong — ₱2,999</label>
-                    <label><input type="checkbox" value="The Witcher 3: Wild Hunt" data-price="999"> The Witcher 3: Wild Hunt — ₱999</label>
-                    <label><input type="checkbox" value="God of War Ragnarök" data-price="2999"> God of War Ragnarök — ₱2,999</label>
-                    <label><input type="checkbox" value="TEKKEN 8" data-price="2999"> TEKKEN 8 — ₱2,999</label>
-                    <label><input type="checkbox" value="Outlast" data-price="499"> Outlast — ₱499</label>
-                    <label><input type="checkbox" value="Terraria" data-price="299"> Terraria — ₱299</label>
-                    <label><input type="checkbox" value="Left 4 Dead 2" data-price="199"> Left 4 Dead 2 — ₱199</label>
-                    <label><input type="checkbox" value="Resident Evil 4" data-price="2399"> Resident Evil 4 — ₱2,399</label>
-                    <label><input type="checkbox" value="Mobile Legends: Bang Bang" data-price="0"> Mobile Legends: Bang Bang — Free</label>
-                    <label><input type="checkbox" value="Genshin Impact" data-price="0"> Genshin Impact — Free</label>
-                    <label><input type="checkbox" value="Honkai: Star Rail" data-price="0"> Honkai: Star Rail — Free</label>
-                    <label><input type="checkbox" value="PUBG Mobile" data-price="0"> PUBG Mobile — Free</label>
-                    <label><input type="checkbox" value="Call of Duty: Mobile" data-price="0"> Call of Duty: Mobile — Free</label>
-                    <label><input type="checkbox" value="Free Fire" data-price="0"> Free Fire — Free</label>
-                    <label><input type="checkbox" value="Clash of Clans" data-price="0"> Clash of Clans — Free</label>
-                    <label><input type="checkbox" value="Clash Royale" data-price="0"> Clash Royale — Free</label>
-                    <label><input type="checkbox" value="Roblox" data-price="0"> Roblox — Free</label>
-                    <label><input type="checkbox" value="Blood Strike" data-price="0"> Blood Strike — Free</label>
-                    <label><input type="checkbox" value="WarDogs" data-price="499"> WarDogs — ₱499</label>
-                    <label><input type="checkbox" value="REPO" data-price="399"> REPO — ₱399</label>
-                    <label><input type="checkbox" value="Among Us" data-price="99"> Among Us — ₱99</label>
-                    <label><input type="checkbox" value="Dead By Daylight" data-price="799"> Dead by Daylight — ₱799</label>
-                    <label><input type="checkbox" value="Clive Barker's Hellraiser: Revival" data-price="2499"> Clive Barker's Hellraiser: Revival — ₱2,499</label>
-                    <label><input type="checkbox" value="Brawl Stars" data-price="0"> Brawl Stars — Free</label>
-
-                    <!-- CART TOTAL -->
-                    <div class="cart-total">
-                        Total:
-                        <strong id="cartTotal">₱0.00</strong>
-                    </div>
-
-                    <!-- CHECKOUT -->
-                    <button type="button"
-                            class="checkout-btn"
-                            onclick="goToCheckout()">
-                        Checkout
-                    </button>
-
-                </div>
-            </div>
+            <div class="nav-dropdown"></div>
         </div>
 
         <!-- SEARCH BAR -->
@@ -186,225 +131,16 @@
     </main>
 
     <!-- BACKGROUND AUDIO -->
-    <audio controls loop muted>
+    <audio controls loop autoplay onloadstart="this.volume=0.01" hidden>
         <source src="ambient.mp3" type="audio/mpeg">
         Your browser does not support audio.
     </audio>
 
     <!-- JAVASCRIPT -->
-    <script>
 
-        // HAMBURGER MENU
-        const sideMenu = document.getElementById("sideMenu");
-        const menuButton = document.getElementById("menuButton");
-        const menuBackdrop = document.getElementById("menuBackdrop");
-
-        function openMenu() {
-            sideMenu.classList.add("active");
-            menuBackdrop.classList.add("active");
-            menuButton.setAttribute("aria-expanded", "true");
-        }
-
-        function closeMenu() {
-            sideMenu.classList.remove("active");
-            menuBackdrop.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-
-        function toggleMenu() {
-            if (sideMenu.classList.contains("active")) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        }
-
-        // CART DROPDOWN
-        const cartDropdown = document.getElementById("cartDropdown");
-        const cartToggle = document.getElementById("cartToggle");
-
-        function toggleCart() {
-            const isOpen = cartDropdown.classList.toggle("active");
-            cartToggle.setAttribute("aria-expanded", String(isOpen));
-        }
-
-        // CART CHECKBOXES
-        const cartCheckboxes = document.querySelectorAll(
-            '#cartDropdown input[type="checkbox"]'
-        );
-
-        // SELECTED GAME DISPLAY
-        const gameDisplay = document.getElementById("gameDisplay");
-        const displayTitle = document.getElementById("displayTitle");
-
-        // AVAILABLE TRAILERS
-        const gameTrailers = {
-            "Grand Theft Auto V": "hvoD7ehZPcM",
-            "Black Myth: Wukong": "u83VdXAVq08"
-        };
-
-        // DISPLAY THE SELECTED GAME ON THE HOME PAGE
-        function updateGameDisplay() {
-            const selectedGames = Array.from(cartCheckboxes).filter(
-                function(item) {
-                    return item.checked;
-                }
-            );
-
-            // CLEAR THE PAGE IF NO GAME IS SELECTED
-            gameDisplay.innerHTML = "";
-            displayTitle.textContent = "";
-
-            if (selectedGames.length === 0) {
-                return;
-            }
-
-            displayTitle.textContent = "Your Selected Games";
-
-            // DISPLAY ALL SELECTED GAMES
-            selectedGames.forEach(function(selectedGame) {
-                const gameName = selectedGame.value;
-                const gamePrice = Number(selectedGame.dataset.price || 0);
-
-                const card = document.createElement("article");
-                card.className = "news-card";
-
-                // SHOW TRAILER WHEN AVAILABLE
-                if (gameTrailers[gameName]) {
-                    const iframe = document.createElement("iframe");
-
-                    iframe.src =
-                        "https://www.youtube.com/embed/" +
-                        gameTrailers[gameName] + "?mute=1";
-
-                    iframe.title = gameName + " trailer";
-                    iframe.loading = "lazy";
-                    iframe.allow =
-                        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-                    iframe.allowFullscreen = true;
-
-                    card.appendChild(iframe);
-                }
-
-                // GAME NAME
-                const heading = document.createElement("h3");
-                heading.textContent = gameName;
-                card.appendChild(heading);
-
-                // GAME PRICE
-                const price = document.createElement("p");
-
-                price.textContent = gamePrice === 0
-                    ? "Price: Free"
-                    : "Price: ₱" + gamePrice.toLocaleString("en-PH", {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2
-                    });
-
-                card.appendChild(price);
-                gameDisplay.appendChild(card);
-            });
-        }
-
-        // UPDATE TOTAL AND CART COUNT
-        function updateCartTotal() {
-            let total = 0;
-            let count = 0;
-
-            cartCheckboxes.forEach(function(item) {
-                if (item.checked) {
-                    total += Number(item.dataset.price || 0);
-                    count++;
-                }
-            });
-
-            document.getElementById("cartTotal").textContent =
-                "₱" + total.toLocaleString("en-PH", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                });
-
-            document.getElementById("cartCount").textContent = count;
-        }
-
-        // UPDATE WHEN A GAME IS SELECTED OR DESELECTED
-        cartCheckboxes.forEach(function(item) {
-            item.addEventListener("change", function() {
-                updateCartTotal();
-                updateGameDisplay();
-            });
-        });
-
-        // START WITH AN EMPTY GAME DISPLAY
-        updateCartTotal();
-        updateGameDisplay();
-
-        // CHECKOUT
-        function goToCheckout() {
-            const selectedGames = [];
-
-            cartCheckboxes.forEach(function(item) {
-                if (item.checked) {
-                    selectedGames.push({
-                        name: item.value,
-                        price: Number(item.dataset.price || 0)
-                    });
-                }
-            });
-
-            if (selectedGames.length === 0) {
-                alert("Your cart is empty! Please select a game first.");
-                return;
-            }
-
-            // SAVE CART FOR PAYMENT PAGE
-            localStorage.setItem(
-                "nexusCart",
-                JSON.stringify(selectedGames)
-            );
-
-            // SAVE TOTAL
-            const total = selectedGames.reduce(function(sum, game) {
-                return sum + game.price;
-            }, 0);
-
-            localStorage.setItem("nexusTotal", String(total));
-
-            // OPEN PAYMENT PAGE
-            window.location.href = "payment.html";
-        }
-
-        // SEARCH: SEND THE SEARCH TERM TO THE BROWSE PAGE
-        document.getElementById("searchForm").addEventListener(
-            "submit",
-            function(event) {
-                event.preventDefault();
-
-                const searchTerm =
-                    document.getElementById("searchInput").value.trim();
-
-                if (searchTerm !== "") {
-                    window.location.href =
-                        "browse.html?search=" +
-                        encodeURIComponent(searchTerm);
-                } else {
-                    window.location.href = "browse.html";
-                }
-            }
-        );
-
-        // CLOSE CART WHEN CLICKING OUTSIDE IT
-        document.addEventListener("click", function(event) {
-            const dropdownContainer =
-                document.querySelector(".nav-dropdown");
-
-            if (!dropdownContainer.contains(event.target)) {
-                cartDropdown.classList.remove("active");
-                cartToggle.setAttribute("aria-expanded", "false");
-            }
-        });
-
+    <script src="menu.js">  
     </script>
 
+<script src="menu.js"></script>
 </body>
 </html>

@@ -237,7 +237,7 @@ body {
 .game-card img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit:cover;
     display: block;
 }
 
@@ -1167,3 +1167,8 @@ iframe.hover-zoom:hover {
 }
 
 
+body.dev-page {
+    background:
+        url("logogif.gif") center 100% / 50% no-repeat fixed,
+        url("Gaming.jpg") center / cover no-repeat fixed;
+}

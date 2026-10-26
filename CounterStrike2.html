@@ -47,70 +47,22 @@
     </nav>
 
     <!-- NAVIGATION -->
-    <nav class="navbar">
+       <nav class="navbar" aria-label="Store navigation">
 
         <div class="nav-links">
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home</a>
 
-            <a href="browse.html">Browse <span class="arrow">▼</span></a>
+            <a href="browse.html">
+                Browse
+            </a>
 
-            <div class="nav-dropdown">
-
-                <a href="cart.html">Cart <span class="arrow">▼</span></a>
-
-                <div class="dropdown-menu">
-
-                    <label><input type="checkbox" name="cart" value="Counter-Strike 2"> Counter-Strike 2</label>
-                    <label><input type="checkbox" name="cart" value="Valorant"> Valorant</label>
-                    <label><input type="checkbox" name="cart" value="League Of Legends"> League of Legends</label>
-                    <label><input type="checkbox" name="cart" value="Dota 2"> Dota 2</label>
-                    <label><input type="checkbox" name="cart" value="Minecraft: Java Edition"> Minecraft: Java Edition</label>
-                    <label><input type="checkbox" name="cart" value="Grand Theft Auto V"> Grand Theft Auto V</label>
-                    <label><input type="checkbox" name="cart" value="Red Dead Redemption 2"> Red Dead Redemption 2</label>
-                    <label><input type="checkbox" name="cart" value="Black Myth: Wukong"> Black Myth: Wukong</label>
-                    <label><input type="checkbox" name="cart" value="The Witcher 3: Wild Hunt"> The Witcher 3: Wild Hunt</label>
-                    <label><input type="checkbox" name="cart" value="God of War Ragnarök"> God of War Ragnarök</label>
-                    <label><input type="checkbox" name="cart" value="TEKKEN 8"> TEKKEN 8</label>
-                    <label><input type="checkbox" name="cart" value="Outlast"> Outlast</label>
-                    <label><input type="checkbox" name="cart" value="Terraria"> Terraria</label>
-                    <label><input type="checkbox" name="cart" value="Left 4 Dead 2"> Left 4 Dead 2</label>
-                    <label><input type="checkbox" name="cart" value="Resident Evil 4"> Resident Evil 4</label>
-                    <label><input type="checkbox" name="cart" value="Mobile Legends: Bang Bang"> Mobile Legends: Bang Bang</label>
-                    <label><input type="checkbox" name="cart" value="Genshin Impact"> Genshin Impact</label>
-                    <label><input type="checkbox" name="cart" value="Honkai: Star Rail"> Honkai: Star Rail</label>
-                    <label><input type="checkbox" name="cart" value="PUBG Mobile"> PUBG Mobile</label>
-                    <label><input type="checkbox" name="cart" value="Call of Duty: Mobile"> Call of Duty: Mobile</label>
-                    <label><input type="checkbox" name="cart" value="Free Fire"> Free Fire</label>
-                    <label><input type="checkbox" name="cart" value="Clash of Clans"> Clash of Clans</label>
-                    <label><input type="checkbox" name="cart" value="Clash Royale"> Clash Royale</label>
-                    <label><input type="checkbox" name="cart" value="Roblox"> Roblox</label>
-                    <label><input type="checkbox" name="cart" value="Blood Strike"> Blood Strike</label>
-                    <label><input type="checkbox" name="cart" value="Pokémon GO"> Pokémon GO</label>
-                    <label><input type="checkbox" name="cart" value="Subway Surfers"> Subway Surfers</label>
-                    <label><input type="checkbox" name="cart" value="Among Us"> Among Us</label>
-                    <label><input type="checkbox" name="cart" value="Asphalt Legends Unite"> Asphalt Legends Unite</label>
-                    <label><input type="checkbox" name="cart" value="Brawl Stars"> Brawl Stars</label>
-                    <label><input type="checkbox" name="cart" value="R.E.P.O."> R.E.P.O.</label>
-
-                    <button type="button" class="checkout-btn" onclick="checkout()">Checkout</button>
-
-                </div>
-
-            </div>
-
+            <!-- CART DROPDOWN -->
+            <div class="nav-dropdown"></div>
         </div>
 
-        <!-- SEARCH BAR -->
-        <form class="search" onsubmit="searchGames(event)">
-            <input
-                id="searchInput"
-                type="search"
-                placeholder="Search Games"
-                aria-label="Search games"
-            >
-            <button type="submit" aria-label="Search">🔍</button>
-        </form>
+        
 
     </nav>
 
@@ -147,66 +99,8 @@
 
     </main>
 
-    <script>
-        const sideMenu = document.getElementById("sideMenu");
-        const menuButton = document.querySelector(".menu");
+    
 
-        function openMenu() {
-            sideMenu.classList.add("active");
-            menuButton.setAttribute("aria-expanded", "true");
-        }
-
-        function closeMenu() {
-            sideMenu.classList.remove("active");
-            menuButton.setAttribute("aria-expanded", "false");
-        }
-
-        document.addEventListener("click", function (event) {
-            if (
-                sideMenu.classList.contains("active") &&
-                !sideMenu.contains(event.target) &&
-                !menuButton.contains(event.target)
-            ) {
-                closeMenu();
-            }
-        });
-
-        document.addEventListener("keydown", function (event) {
-            if (event.key === "Escape") {
-                closeMenu();
-            }
-        });
-
-        function checkout() {
-            const selectedGames = document.querySelectorAll(
-                '.dropdown-menu input[name="cart"]:checked'
-            );
-
-            if (selectedGames.length === 0) {
-                alert("Please select at least one game before checkout.");
-                return;
-            }
-
-            const games = Array.from(selectedGames).map(function (checkbox) {
-                return checkbox.value;
-            });
-
-            sessionStorage.setItem("nexusCart", JSON.stringify(games));
-            window.location.href = "cart.html";
-        }
-
-        function searchGames(event) {
-            event.preventDefault();
-
-            const query = document.getElementById("searchInput").value.trim();
-
-            if (query) {
-                window.location.href = "browse.html?search=" + encodeURIComponent(query);
-            } else {
-                window.location.href = "browse.html";
-            }
-        }
-    </script>
-
+<script src="menu.js"></script>
 </body>
 </html>
