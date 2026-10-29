@@ -33,8 +33,7 @@ const GAMES = [
     { name: "REPO", price: 399 },
     { name: "Among Us", price: 99 },
     { name: "Dead By Daylight", label: "Dead by Daylight", price: 799 },
-    { name: "Clive Barker's Hellraiser: Revival", price: 2499 },
-    { name: "Brawl Stars", price: 0 }
+    { name: "Clive Barker's Hellraiser: Revival", price: 2499 }
 ];
 
 function loadCartDropdown() {
